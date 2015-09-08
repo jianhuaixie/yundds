@@ -1,0 +1,71 @@
+
+
+<script type="text/javascript" src="__PUBLIC__/js/region.js"></script>
+
+<script type="text/javascript">
+
+          region.isAdmin = false;
+
+          {foreach from=$lang.flow_js item=item key=key}
+
+          var {$key} = "{$item}";
+
+          {/foreach}
+
+
+
+          {literal}
+
+          onload = function() {
+
+            if (!document.all)
+
+            {
+
+              document.forms['theForm'].reset();
+
+            }
+
+          }
+
+          {/literal}
+
+        </script>
+
+<div class="con">
+
+  <div class="ect-bg">
+
+   <header id="header" class="header">
+
+    <div class="user-header">
+
+      <h1 >{$title}</h1>
+
+      <div class="header_l header_return"> <a class="ico_10_2" href="javascript:history.go(-1);"> 返回 </a> </div>
+
+      <div class="header_r header_search"> <a class="ico_18_2" href="javascript:void(0);"> 会员中心菜单</a> </div>
+      <!-- #BeginLibraryItem "/Library/page_menu_member.lbi" --><!-- #EndLibraryItem -->
+   </div>
+   </header>
+   <div class="line-top"></div>
+  </div>
+
+<section class="ect-text-style">
+
+  <!-- 如果有收货地址，循环显示用户的收获地址 --> 
+
+  <!-- {foreach from=$consignee_list item=consignee key=sn} -->    
+
+     <form action="{:url('flow/consignee')}" method="post" name="theForm" id="theForm" onSubmit="return checkConsignee(this)">
+
+        <!-- #BeginLibraryItem "/Library/consignee.lbi" --><!-- #EndLibraryItem -->
+
+     </form>
+
+  <!-- {/foreach} --> 
+
+</section>
+
+</div>
+

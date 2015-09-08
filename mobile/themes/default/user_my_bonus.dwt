@@ -1,0 +1,31 @@
+<!-- #BeginLibraryItem "/library/user_header.lbi" --><!-- #EndLibraryItem -->
+<!--start-->
+<section class="user-card">
+
+ <!-- {if $bonus} -->
+ <!--{foreach from=$bonus item=item}-->
+ {if $item.status neq '已使用'}
+ <div class="user-card-box">
+   <div class="user-card-top">
+     <div class="card-top-bg">
+      <a><img src="images/user-card-photo.png" /></a>
+      <span>{$item.type_name}</span>
+     </div>
+   </div>
+   
+   <p>
+     <span class="shop-name">云的商城</span>
+     <span class="card-time">有效期：{$item.use_enddate}</span>
+   </p>
+ </div> 
+ {/if}
+ <!--{/foreach}-->
+ <!-- #BeginLibraryItem "/library/page.lbi" --><!-- #EndLibraryItem -->
+ <!-- {/if} -->
+ 
+</section>
+<!--end-->
+</div>
+<!-- #BeginLibraryItem "/library/search.lbi" --><!-- #EndLibraryItem --> <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+</html>

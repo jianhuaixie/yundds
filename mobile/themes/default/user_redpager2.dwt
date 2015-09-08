@@ -1,0 +1,38 @@
+<!-- #BeginLibraryItem "/library/user_header.lbi" --><!-- #EndLibraryItem -->
+<!--start-->
+ <section class="user-redpaper ">
+    <div>
+       <a class="img"><img src="images/user_redpager.jpg" /></a>
+    </div>
+     <ul>
+        <li>
+             <a class="title" href="index.php?m=default&amp;c=user&amp;a=paihang_detail_year_allayaccount">
+               <span class="sp1">9月6日</span>
+               <i></i>
+               <span class="sp2">100人</span>
+             </a>
+        </li>
+        
+        <li>
+             <a class="title" href="index.php?m=default&amp;c=user&amp;a=paihang_detail_year_allayaccount">
+               <span class="sp1">9月6日</span>
+               <i></i>
+               <span class="sp2">100人</span>
+             </a>
+        </li>
+        
+        <li>
+             <a class="title" href="index.php?m=default&amp;c=user&amp;a=paihang_detail_year_allayaccount">
+               <span class="sp1">9月6日</span>
+               <i></i>
+               <span class="sp2">100人</span>
+             </a>
+        </li>
+     </ul>
+</section>
+<!--end-->
+</div>
+<!-- #BeginLibraryItem "/library/search.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/user_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+</html>

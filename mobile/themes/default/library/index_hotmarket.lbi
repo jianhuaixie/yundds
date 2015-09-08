@@ -1,0 +1,17 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<section class="h-hot">
+   <div class="h-hot-title">
+      <h4>热门市场</h4>
+      <a href="{:url('category/top_all')}">更多</a>
+   </div>
+   <div class="h-hot-box">
+     <ul class="hot-big">
+        {insert name='ads' id=6 num=2}
+     </ul>
+     <ul class="hot-small">
+        {insert name='ads' id=7 num=8}
+     </ul>
+   </div>
+</section>
+<div class="clear"></div>
+<div class="blank2"></div>

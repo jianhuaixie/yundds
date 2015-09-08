@@ -1,0 +1,57 @@
+<!-- #BeginLibraryItem "/library/user_header.lbi" --><!-- #EndLibraryItem -->
+
+<section class="balance2_list">
+
+   <ul>
+
+
+     <li>
+
+       <a class="title" href="{:url('user/bd_new')}">
+
+          <span class="sp1">绑定新注册账号</span> <!--修改密码-->
+
+          <i></i>
+
+         <!--<span class="sp2">497.50元</span>-->
+
+       </a>
+
+     </li>
+
+     <li>
+
+       <a class="title" href="{:url('user/bd_old')}">
+
+          <span class="sp1">绑定已有账号</span> <!--收货地址-->
+
+          <i></i>
+
+       </a>
+
+     </li>
+
+       <li>
+
+       <a class="title" href="{:url('user/bd_change')}">
+
+          <span class="sp1">更换绑定</span> <!--收货地址-->
+
+          <i></i>
+
+       </a>
+
+     </li>
+
+
+	</ul>
+
+</section>
+
+
+</div>
+<!-- #BeginLibraryItem "/library/search.lbi" --><!-- #EndLibraryItem --> <!-- #BeginLibraryItem "/library/user_footer.lbi" --><!-- #EndLibraryItem -->
+
+</body>
+
+</html>

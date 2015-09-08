@@ -1,0 +1,99 @@
+<!-- {if $full_page} -->
+{include file="pageheader.htm"}
+{insert_scripts files="../js/utils.js,listtable.js"}
+<div class="form-div">
+{if $smarty.get.auid}
+{$lang.show_affiliate_orders}
+{else}
+<form action="affiliate_ck2.php?act=list">
+{$lang.sch_stats.info}
+  <a href="affiliate_ck2.php?act=list">{$lang.sch_stats.all}</a>
+  <a href="affiliate_ck2.php?act=list&status=1">待处理</a>
+  <a href="affiliate_ck2.php?act=list&status=2">已分成</a>
+  <a href="affiliate_ck2.php?act=list&status=3">换货</a>
+  <a href="affiliate_ck2.php?act=list&status=4">退货</a>
+  <a href="affiliate_ck2.php?act=list&status=5">等级不符</a>
+{$lang.sch_order}
+<input type="hidden" name="act" value="list" />
+<input name="order_sn" type="text" id="order_sn" size="15">
+<!--<select name="separate_type">
+    <option value="0">操作状态</option>
+    <option value="1">待处理</option>
+    <option value="2">已分成</option>
+    <option value="3">换货</option>
+    <option value="4">退货</option>
+    <option value="5">等级不符</option>
+</select>-->
+<input type="submit" value="{$lang.button_search}" class="button" />
+</form>
+{/if}
+</div>
+<form method="POST" action="affiliate_ck2.php?act=batch_export" name="listForm"  onsubmit="return confirm_bath()">
+<div class="list-div" id="listDiv">
+<!-- {/if} -->
+<table cellspacing='1' cellpadding='3'>
+<tr>
+  <th><input onclick='listTable.selectAll(this, "checkboxes")' type="checkbox" /><a href="javascript:listTable.sort('log_id', 'DESC'); ">ID</a>{$sort_log_id}</th>
+  <th width="15%">订单号</th>
+  <th width="10%">买家ID</th>
+  <th width="10%">收益人ID</th>
+  <th width="5%">分成资金（未扣手续费）</th>
+  <th width="15%">分成资金（<font style="color:#F00;">已扣除5%手续费</font>）</th>
+  <th width="15%">付款时间</th>
+  <th width="15%">确认收货时间</th>
+  <th width="8%">操作状态</th>
+  <th width="7%">分成模式</th>
+</tr>
+<!-- {foreach from=$logdb item=val} -->
+<tr>
+  <td valign="top" nowrap="nowrap"><input type="checkbox" name="checkboxes[]" value="{$val.log_id}" />{$val.log_id}</td>
+  <td align="center"><a href="order.php?act=info&order_id={$val.order_id}">{$val.order_sn}</a></td>
+  <td align="center">{$val.user_id_buyer}</td>
+  <td align="center">{$val.user_id}</td>
+  <td align="center" >{$val.money}</td>
+  <td align="center" >{$val.money_get}</td>
+  <td align="center">{$val.fukuan_time}</td>
+  <td align="center">{$val.confirm_time}</td>
+  <td align="center">{if $val.separate_type eq 1}待处理{elseif $val.separate_type eq 2}已分成{elseif $val.separate_type eq 3}换货{elseif $val.separate_type eq 4}退货{elseif $val.separate_type eq 5}等级不符{/if}</td>
+  <td align="center">{$val.model_type}</td>
+</tr>
+    <!-- {foreachelse} -->
+    <tr><td class="no-records" colspan="10">{$lang.no_records}</td></tr>
+<!-- {/foreach} -->
+</table>
+  
+<table id="page-table" cellspacing="0">
+<tr>
+  <td><div>
+      <select name="sel_action">
+	    <option value="">{$lang.select_please}</option>
+        <option value="export">导出到EXCEL</option>
+      </select>
+      <input type="hidden" name="act" value="batch" />
+      <input type="submit" name="export" id="btnSubmit" value="{$lang.button_submit}" class="button" disabled="true" /></div></td>
+  <td align="right" nowrap="true">
+  {include file="page.htm"}
+  </td>
+</tr>
+</table>
+<!-- {if $full_page} -->
+</div>
+</form>
+<script type="Text/Javascript" language="JavaScript">
+listTable.recordCount = {$record_count};
+listTable.pageCount = {$page_count};
+
+{foreach from=$filter item=item key=key}
+listTable.filter.{$key} = '{$item}';
+{/foreach}
+
+<!-- {literal} -->
+onload = function()
+{
+  // 开始检查订单
+  startCheckOrder();
+}
+<!-- {/literal} -->
+</script>
+{include file="pagefooter.htm"}
+<!-- {/if} -->

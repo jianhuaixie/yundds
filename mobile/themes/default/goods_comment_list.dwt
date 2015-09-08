@@ -1,0 +1,42 @@
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+
+<div class="con">
+  <div class="ect-bg user-header">
+    <header class="ect-header ect-margin-tb ect-margin-lr text-center icon-write "> 
+      <a href="javascript:history.go(-1)" class="pull-left ico_10_3"></a> 
+      <span>{$title}</span> 
+      <a href="./{if $smarty.session.user_id gt 0}?u={$smarty.session.user_id}{/if}" class="pull-right ico_18_3"></a>
+
+      <!-- #BeginLibraryItem "/library/page_menu_member.lbi" --><!-- #EndLibraryItem --> 
+    </header>
+  
+
+  </div>
+
+
+
+  <!-- #BeginLibraryItem "/library/comments.lbi" -->
+
+
+
+  <div id="ECS_COMMENT"> {* ECSHOP 提醒您：动态载入comments_list.lbi，显示评论列表和评论表单 *}{insert name='comments' type=$type id=$id}</div>
+
+
+
+  <!-- #EndLibraryItem -->
+
+
+
+  
+
+
+
+</div>
+
+
+
+<!-- #BeginLibraryItem "/library/search.lbi" --><!-- #EndLibraryItem --> <!-- #BeginLibraryItem "/library/page_footer3.lbi" --><!-- #EndLibraryItem -->
+
+
+
+</body></html>

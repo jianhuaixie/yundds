@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+ RewriteEngine on
+ 
+#rewriteCond %{http_host} ^yundds.com [NC]
+#rewriteRule ^(.*)$ http://www.yundds.com /$1 [R=301,L]
+ 
+ RewriteCond %{REQUEST_FILENAME} !-d
+ RewriteCond %{REQUEST_FILENAME} !-f
+ RewriteRule ^(.*)$ index.php?r=/$1 [QSA,PT,L]
+</IfModule>

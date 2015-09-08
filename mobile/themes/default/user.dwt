@@ -1,0 +1,396 @@
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+<div class="con">
+<!--
+ <div class="ect-bg">
+  <header class="ect-header ect-margin-tb ect-margin-lr text-center ect-bg icon-write">
+     <a href="javascript:history.go(-1)" class="pull-left ico_10"></a> 
+     <span>{$title}</span> 
+     <a href="javascript:;" onClick="openMune()" class="pull-right ect-icon ect-icon1 ect-icon-mune"></a>
+ </header>
+  <nav class="ect-nav ect-nav-list" style="display:none;">
+    <ul class="ect-diaplay-box text-center">
+      <li class="ect-box-flex"><a href="index.php?a=index"><i class="ect-icon ect-icon-home"></i>{$lang.home}</a></li>
+      <li class="ect-box-flex"><a href="{:url('category/top_all')}"><i class="ect-icon ect-icon-cate"></i>{$lang.category}</a></li>
+      <li class="ect-box-flex"><a href="javascript:openSearch();"><i class="ect-icon ect-icon-search"></i>{$lang.search}</a></li>
+      <li class="ect-box-flex"><a href="{:url('flow/cart')}"><i class="ect-icon ect-icon-flow"></i>{$lang.shopping_cart}</a></li>
+      <li class="ect-box-flex"><a href="{:url('user/index')}"><i class="ect-icon ect-icon-user"></i>{$lang.user_center}</a></li>
+    </ul>
+  </nav>
+-->
+
+<header id="header" class="header">
+  <div class="user-header">
+    <h1 >{$title}</h1>
+    <div class="header_l header_return"> <a class="ico_10_3" href="./{if $smarty.session.user_id gt 0}?u={$smarty.session.user_id}{/if}"> 返回 </a> </div>
+   <div class="header_r header_search"> <a class="ico_18_3" href="./{if $smarty.session.user_id gt 0}?u={$smarty.session.user_id}{/if}"> 会员中心菜单</a> </div>
+    <!--下拉菜单start-->
+   <!--下拉菜单end-->
+  </div>
+</header>
+<!--<dl class="member-list-menu2">
+  <dt class="first">
+    <a href="./{if $smarty.session.user_id gt 0}?u={$smarty.session.user_id}{/if}">
+       <span class="title">返回首页</span>
+    </a>
+  </dt>
+  <dt>
+    <a href="{:url('user/index')}">
+       <span class="title">个人中心</span>
+    </a>
+  </dt>
+</dl>
+<div class="menu-bg3"></div>-->
+<div class="line-top"></div>
+<!-- *用户中心默认显示页面 start --> 
+<dl class="user_top">
+  <dt> {if $info.avatar}<img src="{$info.avatar}">{elseif $info.headimgurl}<img src="{$info.headimgurl}">{else}<img src="data/common/images/get_avatar.png">{/if} </dt>
+  <dd>
+    <p>{if $info.nicheng}昵称：{$info.nicheng}{elseif $info.nickname}昵称：{$info.nickname}{else}{$info.username}{/if}
+
+     | <a href="{:url('user/logout')}" class="ect-colorf">{$lang.label_logout}</a></p>
+
+	<p><span>ID：yd{$smarty.session.user_id}</span></p>
+    <p><span>会员等级：{$rank_name}</span></p>
+
+    <!--<p><span>{$info.integral}{$info.integral_name}</span></p>-->
+  </dd>
+  <div class="user_top_list">
+    <ul>
+
+    
+
+      <li>
+
+       <a href="{:url('user/collection_list')}">
+
+        <span class="sp1">{insert name='collection_num'}</span>
+
+        <span class="sp2">关注的商品</span>
+
+       </a>
+
+      </li>
+
+      <li>
+
+        <a href="{:url('user/history_list')}">
+
+         <span class="sp1">{insert name='history_num'}</span>
+
+         <span class="sp2">浏览记录</span>
+
+        </a>
+
+      </li>
+
+      <li class="last">
+
+       <a href="{:url('user/msg_list')}">
+
+        <span class="sp1">{insert name='msg_num_all'}</span>
+
+        <span class="sp2">我的消息</span>
+
+       </a>
+
+      </li>
+
+      
+
+    </ul>
+
+  </div>
+
+
+
+</dl>
+
+<div class="blank2"></div>
+
+
+
+<!--菜单列表 start-->
+
+<section class="user2_list">
+
+   <ul>
+
+   <!--我的订单start-->
+
+     <li class="first">
+
+       <a class="title" href="{:url('user/order_list')}">
+
+          <em><img src="images/user_title_icon1.png" /></em>
+
+          <span class="sp1">我的订单</span>
+
+          <i></i>
+
+          <span class="sp2">查看全部订单</span>
+
+       </a>
+
+       <dl class="dl1">
+
+         <dt>
+
+            <a href="{:url('user/not_pay_order_list')}"> 
+
+              <span class="sp1"><img src="images/user_order_icon1.png" />
+
+              <strong>{insert name='not_pay_order_list_num'}</strong>
+
+              </span>
+
+              <span class="sp2">待付款</span>
+
+         	</a>
+
+         </dt>
+
+         <dt>
+
+            <a href="{:url('user/to_receive_order_list')}">
+
+              <span class="sp1"><img src="images/user_order_icon2.png" />
+
+              <strong>{insert name='to_receive_order_list_num'}</strong>
+
+              </span>
+
+              <span class="sp2">待收货</span>
+
+            </a>
+
+         </dt>
+
+         <dt>
+
+            <a href="{:url('user/to_comment_order_list')}">
+
+              <span class="sp1"><img src="images/user_order_icon3.png" />
+
+               <strong>{insert name='to_comment_order_list_num'}</strong>
+
+              </span>
+
+              <span class="sp2">待评价</span>
+
+            </a>
+
+         </dt>
+
+         <dt>
+
+            <a href="{:url('user/to_return_order_list')}">
+
+              <span class="sp1"><img src="images/user_order_icon4.png" />
+
+               <strong>{insert name='to_return_order_list_num'}</strong>
+
+              </span>
+
+              <span class="sp2">返修/退换</span>
+
+            </a>
+
+         </dt>
+
+       </dl>
+
+     </li>
+
+     <!--我的订单end-->
+
+     
+
+     
+
+     <!--我的钱包start-->
+
+     <li>
+
+       <a class="title" href="{:url('user/account_detail')}">
+
+          <em><img src="images/user_title_icon2.png" /></em>
+
+          <span class="sp1">我的钱包</span>
+
+          <i></i>
+
+          <!--<span class="sp2">查看全部订单</span>-->
+
+       </a>
+
+       <dl class="dl2">
+
+         <dt>
+
+            <a href="{:url('user/account_detail')}" class="a1">
+
+              <span class="sp1">{$info.surplus2}</span>
+
+              <span class="sp2">账户余额</span>
+
+            </a>
+
+         </dt>
+
+         
+
+         <dt>
+
+            <a>
+
+              <span class="sp1">{$info.integral}</span>
+
+              <span class="sp2">积分</span>
+
+            </a>
+
+         </dt>
+
+         
+
+         <dt>
+
+            <a class="a3" href="{:url('user/my_bonus')}">
+
+              <span class="sp1">{insert name='user_bonus_num'}</span>
+
+              <span class="sp2">优惠券</span>
+
+            </a>
+
+         </dt>
+
+
+
+       </dl>
+
+     </li>
+
+     <!--我的钱包end-->
+
+     <!--新推广中心 start-->
+     <div class="clear"></div>
+     <li class="member">
+       <a class="title" href="{:url('user/my_tuiguang')}">
+          <em><img src="images/user_title_icon3.png" /></em>
+          <span class="sp1">我的推广中心</span>
+          <i></i>
+       </a>
+     </li>
+     <!--新推广中心 end-->
+
+
+     <div class="clear"></div>
+
+     <!--云的会员start-->
+
+     <li class="member">
+
+       <a class="title" href="{:url('user/my_setting')}">
+
+          <em><img src="images/user_title_icon5.png" /></em>
+
+          <span class="sp1">个人设置</span>
+
+          <i></i>
+
+          <!--<span class="sp2">查看全部订单</span>-->
+
+       </a>
+
+      
+
+     </li>
+
+     <!--京东会员end-->
+     
+     <!--生产二维码start-->
+
+     <li class="member">
+       <a class="title" href="index.php?m=default&c=Poster&a=poster&user_id={$user_id}">
+          <em><img src="images/user_title_icon5.png" /></em>
+          <span class="sp1">我的二维码</span>
+          <i></i>
+          <!--<span class="sp2">查看全部订单</span>-->
+
+       </a>
+     </li>
+     <!--生产二维码end-->
+    
+     <!--生产推广海报start-->
+
+     <li class="member">
+       <a class="title" href="index.php?m=default&c=Poster&a=playbill&user_id={$user_id}">
+          <em><img src="images/user_title_icon5.png" /></em>
+          <span class="sp1">我的推广海报</span>
+          <i></i>
+          <!--<span class="sp2">查看全部订单</span>-->
+
+       </a>
+     </li>
+     <!--生产推广海报end-->	
+
+     <!--云的会员start-->
+
+     <li class="member">
+
+       <a class="title" href="{:url('user/bd_new')}">
+
+          <em><img src="images/user_title_icon5.png" /></em>
+
+          <span class="sp1">账号绑定</span>
+          <i></i>
+
+       </a>
+     </li>
+      <!--意见反馈start-->
+
+     <li>
+
+       <a class="title" href="{:url('user/service')}">
+
+          <em><img src="images/user_title_icon6.png" /></em>
+
+          <span class="sp1">意见反馈</span>
+
+          <i></i>
+
+          <!--<span class="sp2">查看全部订单</span>-->
+
+       </a>
+
+      
+
+     </li>
+
+     <!--京东会员end-->
+
+     
+
+     
+
+   </ul>
+
+</section>
+
+<!--菜单列表 end-->
+
+
+
+<!-- #用户中心默认显示页面 end--> 
+
+   
+
+</div>
+
+<!-- #BeginLibraryItem "/library/search.lbi" --><!-- #EndLibraryItem --> <!-- #BeginLibraryItem "/library/user_footer.lbi" --><!-- #EndLibraryItem --> 
+
+</body>
+
+</html>
+

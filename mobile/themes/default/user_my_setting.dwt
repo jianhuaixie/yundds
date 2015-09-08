@@ -1,0 +1,91 @@
+<!-- #BeginLibraryItem "/library/user_header.lbi" --><!-- #EndLibraryItem -->
+
+<section class="balance2_list">
+
+   <ul>
+
+<!--
+
+     <li>
+
+       <a class="title" href="{:url('user/edit_avatar')}">
+
+          <span class="sp1">修改头像</span>
+
+          <i></i>
+
+       </a>
+
+     </li>
+
+-->
+
+     <li>
+
+       <a class="title" href="{:url('user/edit_password')}">
+
+          <span class="sp1">{$lang.edit_password}</span> <!--修改密码-->
+
+          <i></i>
+
+         <!--<span class="sp2">497.50元</span>-->
+
+       </a>
+
+     </li>
+
+
+
+     <li>
+
+       <a class="title" href="{:url('user/address_list')}">
+
+          <span class="sp1">{$lang.label_address}</span> <!--收货地址-->
+
+          <i></i>
+
+       </a>
+
+     </li>
+
+
+
+     <li>
+
+       <a class="title" href="{:url('user/profile')}">
+
+          <span class="sp1">{$lang.profile}</span><!--个人资料-->
+
+          <i></i>
+
+       </a>
+
+     </li>
+
+
+
+     <li>
+
+       <a class="title" href="{:url('user/tag_list')}">
+
+          <span class="sp1">{$lang.label_tag}</span><!--我的标签-->
+
+          <i></i>
+
+       </a>
+
+     </li>
+
+
+
+	</ul>
+
+</section>
+
+
+</div>
+<!-- #BeginLibraryItem "/library/search.lbi" --><!-- #EndLibraryItem --> <!-- #BeginLibraryItem "/library/user_footer.lbi" --><!-- #EndLibraryItem -->
+
+</body>
+
+</html>

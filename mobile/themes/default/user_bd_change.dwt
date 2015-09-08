@@ -1,0 +1,126 @@
+<!-- #BeginLibraryItem "/library/user_header.lbi" --><!-- #EndLibraryItem -->
+
+{if $step eq 'step1'}
+  <form name="formPassword" action="{:url('user/bd_change')}" method="post"  >
+ <input type="hidden" name="flag" id="flag" value="forget" />
+
+  <section class="flow-consignee ect-bg-colorf">
+
+   		<ul>
+
+       	  <li>
+
+       	    <div class="input-text"><b class="pull-left">手机号码：</b><span>
+             <input   value="{$new_mobile}" readonly type="text">
+            
+   	        <input  name="mobile" id="mobile_phone" value="{$mobile}"  type="hidden"></span></div></li>
+
+          <li>
+
+            <div class="input-text"><b>验证码：</b><span>
+
+            <input placeholder="请输入验证码" name="mobile_code" id="mobile_code" type="text" style="width:50%">
+             <input class="pull-right ect-bg get-ma" id="zphone" name="sendsms" style="border: none;" type="button" value="获取验证码" onclick="sendSms();">
+            </span>
+           
+            </div>
+            </li>
+          <div class="input-text">
+          <b>密码：</b><span><input placeholder="输入密码" name="password" id="password" type="password"></span></div></li>
+
+        </ul>
+
+
+   </section>
+
+
+   <input name="act" type="hidden" value="bd_change" />
+ <input type="hidden" name="sms_code" value="{$sms_code}" id="sms_code" />
+
+   <div class="two-btn ect-padding-tb ect-padding-lr ect-margin-tb text-center">
+
+
+        <input name="submit" type="submit" class="btn btn-info" value="下一步" />
+
+
+   </div>
+
+
+   </form>
+
+
+</div>
+{/if}
+
+{if $step eq 'step2'}
+  <form name="formPassword" action="{:url('user/bd_new')}" method="post"  >
+ <input type="hidden" name="flag" id="flag" value="register" />
+
+  <section class="flow-consignee ect-bg-colorf">
+
+
+   		<ul>
+
+
+       	  <li>
+
+
+       	    <div class="input-text"><b class="pull-left">新手机号码：</b><span>
+
+
+   	        <input placeholder="请输入手机号码" name="mobile" id="mobile_phone"  type="text"></span></div></li>
+
+
+          <li>
+
+            <div class="input-text"><b>验证码：</b><span>
+
+            <input placeholder="请输入验证码" name="mobile_code" id="mobile_code" type="text" style="width:50%">
+             <input class="pull-right ect-bg get-ma" id="zphone" name="sendsms" style="border: none;" type="button" value="获取验证码" onclick="sendSms();">
+            </span>
+           
+            </div>
+            </li>
+          <li>
+          <div class="input-text">
+          <b>新密码：</b><span><input placeholder="输入密码" name="password" id="password" type="password"></span></div></li>
+
+
+        </ul>
+
+
+   </section>
+
+
+   <input name="act" type="hidden" value="bd_new" />
+ <input type="hidden" name="sms_code" value="{$sms_code}" id="sms_code" />
+
+   <div class="two-btn ect-padding-tb ect-padding-lr ect-margin-tb text-center">
+
+
+        <input name="submit" type="submit" class="btn btn-info" value="确认绑定" />
+
+
+   </div>
+
+
+   </form>
+
+
+</div>
+{/if}
+
+
+
+<!-- #BeginLibraryItem "/library/search.lbi" --><!-- #EndLibraryItem -->
+
+
+<!-- #BeginLibraryItem "/library/user_footer.lbi" --><!-- #EndLibraryItem -->
+
+<script type="text/javascript" src="__PUBLIC__/js/sms.js"></script> 
+
+</body>
+
+
+
+</html>

@@ -1,0 +1,8 @@
+<!-- #BeginLibraryItem "/library/user_header.lbi" --><!-- #EndLibraryItem -->
+
+<section class="user-my-poster">
+  <div>
+    <a><img src="{$Poster}" /></a>
+  </div>
+</section>
+<div>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<meta name="Keywords" content="{$meta_keywords}" />
+
+<meta name="Description" content="{$meta_description}" />
+
+<title>{$page_title} 触屏版</title>
+
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="{$ectouch_css_path}">
+
+<link rel="stylesheet" href="__TPL__/css/style.css">
+
+<link rel="stylesheet" href="__TPL__/css/user.css">
+
+<link rel="stylesheet" href="__TPL__/css/photoswipe.css">
+
+</head>
+
+
+
+<body>
+
+<div class="con">
+
+
+
+<!--
+
+ <div class="ect-bg">
+
+  <header class="ect-header ect-margin-tb ect-margin-lr text-center ect-bg icon-write">
+
+     <a href="javascript:history.go(-1)" class="pull-left ico_10"></a> 
+
+     <span>{$title}</span> 
+
+     <a href="javascript:;" onClick="openMune()" class="pull-right ect-icon ect-icon1 ect-icon-mune"></a>
+
+ </header>
+
+  <nav class="ect-nav ect-nav-list" style="display:none;">
+
+    <ul class="ect-diaplay-box text-center">
+
+      <li class="ect-box-flex"><a href="index.php?a=index"><i class="ect-icon ect-icon-home"></i>{$lang.home}</a></li>
+
+      <li class="ect-box-flex"><a href="{:url('category/top_all')}"><i class="ect-icon ect-icon-cate"></i>{$lang.category}</a></li>
+
+      <li class="ect-box-flex"><a href="javascript:openSearch();"><i class="ect-icon ect-icon-search"></i>{$lang.search}</a></li>
+
+      <li class="ect-box-flex"><a href="{:url('flow/cart')}"><i class="ect-icon ect-icon-flow"></i>{$lang.shopping_cart}</a></li>
+
+      <li class="ect-box-flex"><a href="{:url('user/index')}"><i class="ect-icon ect-icon-user"></i>{$lang.user_center}</a></li>
+
+    </ul>
+
+  </nav>
+
+-->
+
+
+
+<header id="header" class="header2">
+
+  <div class="user-header">
+
+    <h1 >{$title}</h1>
+
+    <div class="header_l header_return"> <a class="ico_10_1" href="javascript:history.go(-1);"> 返回 </a> </div>
+
+    <div class="header_r header_search"> <a class="ico_18_1" href="javascript:void(0);"> 会员中心菜单</a> </div>
+
+    
+
+    <!--下拉菜单start-->
+
+<dl class="member-list-menu">
+
+  <dt class="first">
+
+    <a href="./{if $smarty.session.user_id gt 0}?u={$smarty.session.user_id}{/if}">
+
+       <i class="ico_21"></i>
+
+       <span class="title">首页</span>
+
+    </a>
+
+  </dt>
+
+  
+
+  <dt>
+
+    <a href="{:url('category/top_all')}">
+
+       <i class="ico_22"></i>
+
+       <span class="title">分类</span>
+
+    </a>
+
+  </dt>
+
+  
+
+  <dt>
+
+    <a href="{:url('flow/cart')}">
+
+       <i class="ico_23">
+
+       <span class="global-nav__nav-shop-cart-num2" id="carId">{insert name='cart_info_number'}</span>
+
+       </i>
+
+    <span class="title">购物车</span>
+
+    </a>
+
+  </dt>
+
+  
+
+  <dt>
+
+    <a href="{:url('user/index')}">
+
+       <i class="ico_24"></i>
+
+       <span class="title">会员中心</span>
+
+    </a>
+
+  </dt>
+
+  {if $smarty.session.user_id gt 0}
+
+  <dt class="last">
+
+    <a href="{:url('user/logout')}">
+
+       <i class="ico_25"></i>
+
+       <span class="title">退出</span>
+
+    </a>
+
+  </dt>
+
+  {/if}
+
+</dl>
+
+<div class="menu-bg"></div>
+
+<!--下拉菜单end-->
+
+   
+
+  </div>
+
+</header>
+
+ <div class="line-top"></div>
+
+</div>
+

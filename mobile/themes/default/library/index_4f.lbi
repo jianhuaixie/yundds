@@ -1,0 +1,33 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<section>
+
+  <!--{foreach from=$floor_goods_4 item=goods name="floor_foreach"}-->
+
+  <div class="h-floor-box">
+
+     <div class="h-floor-content">
+
+        <li><a href="{$goods.url}{if $smarty.session.user_id gt 0}&u={$smarty.session.user_id}{/if}"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}" /></a></li>
+
+        <div class="cont-right">
+
+           <h4><a href="{$goods.url{if $smarty.session.user_id gt 0}&u={$smarty.session.user_id}{/if}}">{$goods.name|escape:html}</a></h4>
+
+           <span class="cut cut4">减</span>
+
+           <span class="price"><!-- {if $goods.promote_price neq ""} -->{$goods.promote_price}<!-- {else}-->{$goods.shop_price}<!--{/if}--><del>{$goods.shop_price}</del></span>
+
+           <a class="buy-cart" href="{$goods.url}{if $smarty.session.user_id gt 0}&u={$smarty.session.user_id}{/if}"></a>
+
+        </div>
+
+     </div>
+
+     <span class="sum">库存{$goods.goods_number}</span>
+
+  </div>
+
+  <!--{/foreach}-->
+
+</section>

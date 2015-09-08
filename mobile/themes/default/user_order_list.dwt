@@ -1,0 +1,206 @@
+<!-- #BeginLibraryItem "/library/user_header3.lbi" --><!-- #EndLibraryItem -->
+
+
+{if $show_asynclist}
+
+
+<section class="user_order_list2">
+
+   <div class="category-list">
+
+
+
+     <a id="nav1" class="a1 {if $tab eq 1}on{/if}" href="{:url('user/order_list')}">全部</a>
+
+
+
+     <a id="nav2" class="a2 {if $tab eq 2}on{/if}" href="{:url('user/not_pay_order_list')}">待付款</a>
+
+
+
+     <a id="nav3" class="a3 {if $tab eq 3}on{/if}" href="{:url('user/to_receive_order_list')}">待收货</a>
+
+
+
+     <a id="nav4" class="a4 {if $tab eq 4}on{/if}" href="{:url('user/to_comment_order_list')}">待评价</a>
+
+
+
+     <a id="nav5" class="a5 {if $tab eq 5}on{/if}" href="{:url('user/to_return_order_list')}">退货/返修</a>
+
+
+
+   </div>
+
+
+
+
+
+
+
+  <div class="ect-pro-list user-order" style="border-bottom:none;">
+
+
+
+    <ul id="J_ItemList" class="order_list2">
+
+
+
+       <li class="single_item"></li>
+
+
+
+       <a href="javascript:;" style="text-align:center" class="get_more"></a>
+
+
+
+    </ul>
+
+
+
+  </div>
+
+
+
+</section>
+
+
+
+
+
+
+
+{else}
+
+
+
+<section class="user_order_list">
+
+
+
+	<div class="ect-pro-list user-order" style="border-bottom:none;">
+
+
+
+		<ul id="J_ItemList">
+
+
+
+        <!--{foreach name=orders_list from=$orders_list item=orders}-->
+
+
+
+           <li>
+
+
+
+             <div><a href="{:url('user/order_detail', array('order_id'=>$this->_var['orders']['order_id']))}"><span>订单编号：{$orders.order_sn}</span><span class="status">{$orders.order_status}</span></a></div>
+
+
+
+             <dl>
+
+
+
+               <dt>
+
+
+
+                 <a href="{:url('user/order_detail', array('order_id'=>$this->_var['orders']['order_id']))}">
+
+
+
+                   <span class="sp1"><img src="{$orders.img}"></span>
+
+
+
+                   <span class="sp2">{$lang.order_total_fee}:<strong class="ect-color">{$orders.total_fee}</strong></span>
+
+
+
+                   <span class="sp2">{$lang.order_addtime}：{$orders.order_time}</span>
+
+
+
+                </a>
+
+
+
+               </dt>
+
+
+
+             </dl>
+
+
+
+          </li>
+
+
+
+        <!--{/foreach}-->
+
+
+
+		</ul>
+
+
+
+	</div>
+
+
+
+</section>
+
+
+
+ {include file='library/page.lbi '}
+
+
+
+{/if}
+
+
+
+</div>
+
+
+<!-- #BeginLibraryItem "/library/search.lbi" --><!-- #EndLibraryItem -->
+
+<!-- #BeginLibraryItem "/library/user_footer.lbi" --><!-- #EndLibraryItem -->
+
+
+
+<script type="text/javascript">
+
+
+
+{foreach from=$lang.merge_order_js item=item key=key}
+
+
+
+    var {$key} = "{$item}";
+
+
+
+{/foreach}
+
+
+
+if({$show_asynclist}){
+
+
+
+get_asynclist('index.php?m=default&c=user&a=async_order_list&pay={$pay}' , '__TPL__/images/loader.gif');
+
+
+
+}
+
+
+
+</script> 
+
+
+
+</body></html>

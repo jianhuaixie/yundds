@@ -1,0 +1,23 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<section class="h-brand">
+
+  <div class=" h-floor">
+
+    <div class="h-floor-title"><span>今日最大牌</span> <a>查看更多>></a></div>
+
+   </div>
+
+   
+
+   <div class="brand-box">
+
+      {insert name='ads' id=14 num=8}
+
+   </div>
+
+</section>
+
+<div class="clear"></div>
+
+<div class="blank2"></div>

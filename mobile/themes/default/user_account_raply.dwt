@@ -1,0 +1,272 @@
+<!-- #BeginLibraryItem "/library/user_header3.lbi" --><!-- #EndLibraryItem -->
+
+<ul class="nav nav-tabs" role="tablist">
+
+
+
+    <li><a href="{:url('User/account_detail')}" >{$lang.add_surplus_log}</a></li>
+
+
+
+    <li><a href="{:url('User/account_log')}" >{$lang.view_application}</a></li>
+
+
+
+	<li><a href="{:url('User/account_deposit')}" >{$lang.surplus_type_0}</a></li>
+
+
+
+	<li class="active"><a href="{:url('User/account_raply')}" >{$lang.surplus_type_1}</a></li>
+
+
+
+  </ul>
+
+
+
+<form action="{:url('user/act_account2')}" method="post" name="theForm" >
+
+
+
+  <div class="ect-bg-colorf flow-consignee">
+
+
+
+    <ul class="o-info">
+
+
+
+      <li>
+
+
+
+        <div class="input-text"><b class="pull-left">{$lang.repay_money}：</b><span>
+          <input name="amount2" placeholder="{$lang.repay_money}" type="text" class="inputBg_touch" value="" />
+          </span>
+        </div>
+        
+        <div class="input-text">
+          <b class="pull-left">收款人：</b>
+          <span>
+            <input name="payee" placeholder="收款人" type="text" class="inputBg_touch" value="" />
+           </span>
+        </div>
+
+        <section class="checkout-select" id="accordion"> 
+           <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" class="collapsed">
+           <p><b>开户银行：</b>
+             <!--<span class="label ect-bg-colory">必填</span>-->
+             <span class="select-bank">工商银行</span>
+           </p>
+           <i class="fa fa-angle-down"></i></a>
+           
+         <div id="collapseOne" class="panel-collapse checkout-select2">
+          <ul class="ect-radio">
+
+            <li>
+
+              <input name="bank_name" type="radio" id="bank_1" value="工商银行" checked="true" supportcod="0" insure="0" onclick="selectBank(this)">
+              <label for="bank_1">工商银行 <i></i></label>
+
+            </li>
+
+            <li>
+              <input name="bank_name" type="radio" id="bank_2" value="中国农业银行" supportcod="0" insure="0" onclick="selectBank(this)">
+              <label for="bank_2">中国农业银行<i></i></label>
+
+            </li>
+            
+            <li>
+              <input name="bank_name" type="radio" id="bank_3" value="中国建设银行" supportcod="0" insure="0" onclick="selectBank(this)">
+              <label for="bank_3">中国建设银行<i></i></label>
+
+            </li>
+            
+            <li>
+              <input name="bank_name" type="radio" id="bank_4" value="中国银行" supportcod="0" insure="0" onclick="selectBank(this)">
+              <label for="bank_4">中国银行<i></i></label>
+
+            </li>
+            
+            <li>
+              <input name="bank_name" type="radio" id="bank_5" value="浦发银行" supportcod="0" insure="0" onclick="selectBank(this)">
+              <label for="bank_5">浦发银行<i></i></label>
+
+            </li>
+            
+            <li>
+              <input name="bank_name" type="radio" id="bank_6" value="广发银行CGB" supportcod="0" insure="0" onclick="selectBank(this)">
+              <label for="bank_6">广发银行CGB<i></i></label>
+
+            </li>
+            
+            <li>
+              <input name="bank_name" type="radio" id="bank_7" value="中国明生银行" supportcod="0" insure="0" onclick="selectBank(this)">
+              <label for="bank_7">中国明生银行<i></i></label>
+
+            </li>
+            
+            <li>
+              <input name="bank_name" type="radio" id="bank_8" value="平安银行" supportcod="0" insure="0" onclick="selectShipping(this)">
+              <label for="bank_8">平安银行<i></i></label>
+
+            </li>
+            <li>
+              <input name="bank_name" type="radio" id="bank_9" value="中国光大银行" supportcod="0" insure="0" onclick="selectBank(this)">
+              <label for="bank_9">中国光大银行<i></i></label>
+
+            </li>
+            
+            <li>
+              <input name="bank_name" type="radio" id="bank_10" value="兴业银行" supportcod="0" insure="0" onclick="selectBank(this)">
+              <label for="bank_10">兴业银行<i></i></label>
+
+            </li>
+            
+            <li>
+              <input name="bank_name" type="radio" id="bank_11" value="中信银行" supportcod="0" insure="0" onclick="selectBank(this)">
+              <label for="bank_11">中信银行<i></i></label>
+
+            </li>
+            
+            <li>
+              <input name="bank_name" type="radio" id="bank_12" value="交通银行" supportcod="0" insure="0" onclick="selectBank(this)">
+              <label for="bank_12">交通银行<i></i></label>
+
+            </li>
+            
+            <li>
+              <input name="bank_name" type="radio" id="bank_13" value="上海银行" supportcod="0" insure="0" onclick="selectBank(this)">
+              <label for="bank_13">上海银行<i></i></label>
+
+            </li>
+            
+          </ul>
+
+        </div>
+        
+        </section>
+        <div class="input-text">
+          <b class="pull-left">银行账号：</b>
+          <span>
+            <input name="bank_account" placeholder="银行账号" type="text" class="inputBg_touch" value="" />
+           </span>
+        </div>
+      </li>
+
+     
+      <li style="margin-bottom:8px;">
+        <div style="font-size:1.1em;">到账时间：3个工作日内</div>
+      </li>
+
+
+
+    </ul>
+
+    
+
+    <div class="user-account-detail"><p class="pull-right count">{$lang.current_surplus}<b class="ect-colory">{$surplus_amount2}</b></p></div>
+
+
+
+  </div>
+
+
+
+  <div class="two-btn ect-padding-tb ect-padding-lr ect-margin-tb text-center">
+
+
+
+  <input type="hidden" name="surplus_type" value="1" />
+
+
+
+    <input type="submit" name="submit"  class="btn btn-info"  value="{$lang.submit_request}"/>
+
+
+
+    <input type="reset" name="submit"  class="btn btn-info ect-bg-colory"  value="{$lang.button_reset}"/>
+
+
+
+  </div>
+
+
+
+</form>
+
+
+
+</div>
+
+
+
+<!-- #BeginLibraryItem "/library/search.lbi" --><!-- #EndLibraryItem --> <!-- #BeginLibraryItem "/library/user_footer.lbi" --><!-- #EndLibraryItem --> 
+
+
+
+<script type="text/javascript" src="__PUBLIC__/js/region.js"></script> 
+
+
+
+<script type="text/javascript" src="__PUBLIC__/js/shopping_flow.js"></script> 
+
+
+
+<script type="text/javascript">
+
+
+
+	region.isAdmin = false;
+
+	{foreach from=$lang.flow_js item=item key=key}
+
+	var {$key} = "{$item}";
+
+	{/foreach}
+
+
+
+	{literal}
+
+	onload = function() {
+
+
+
+	      if (!document.all)
+
+
+	      {
+
+	        document.forms['theForm'].reset();
+
+	      }
+
+	}
+
+
+
+	{/literal}
+
+
+
+</script>
+<script type="text/javascript">
+/*点击下拉手风琴效果*/
+
+    var sel=$('#collapseOne input[name="bank_name"]:checked ').val();
+    $(".checkout-select .select-bank").html(sel);
+	
+	$(".checkout-select a").click(function(){
+		$(".checkout-select2").slideToggle();     
+	});
+	
+	$(".checkout-select .ect-radio li").click(function(){
+		    var a=$('#collapseOne input[name="bank_name"]:checked ').val();
+            $(".checkout-select .select-bank").html(a);
+			$(".checkout-select2").slideUp();  
+		})
+	
+</script>
+
+</body></html>

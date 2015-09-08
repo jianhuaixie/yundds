@@ -1,0 +1,47 @@
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+
+<div class="con">
+
+<div style="height:4.2em;"></div>
+
+
+
+   <header id="header" class="header2">
+
+    <div class="user-header">
+
+      <h1 >促销活动</h1>
+
+      <div class="header_l header_return"> <a class="ico_10_1" href="javascript:history.go(-1);"> 返回 </a> </div>
+
+      <div class="header_r header_search"> <a class="ico_17" href="./{if $smarty.session.user_id gt 0}?u={$smarty.session.user_id}{/if}">首页</a> </div>
+
+    </div>
+
+  </header>
+
+  
+
+  <div class="bran_list" id="J_ItemList" style="opacity:1;">
+
+      <ul class="single_item">
+
+      </ul>
+
+    <a href="javascript:;" class="get_more"></a> </div>
+
+</div>
+
+<!-- #BeginLibraryItem "/library/search.lbi" --><!-- #EndLibraryItem --> <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem --> 
+
+<script type="text/javascript">
+
+get_asynclist("{:url('activity/asynclist', array('page'=>$this->_var['page'], 'sort'=>$this->_var['sort'], 'order'=>$this->_var['order']))}" , '__TPL__/images/loader.gif');
+
+</script> 
+
+<script src="__TPL__/js/TouchSlide.1.1.js"></script>
+
+</body>
+
+</html>

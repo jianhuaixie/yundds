@@ -1,0 +1,69 @@
+<!-- #BeginLibraryItem "/library/user_header.lbi" --><!-- #EndLibraryItem -->
+<!--start-->
+ <section class="user-ranking ">
+       <ul>
+           <div class="blank3"></div>
+           <li>
+             <a class="title" href="index.php?m=default&c=user&a=paihang_detail_year_allayaccount">
+               <span class="sp1">年度粉丝排行榜</span>
+               
+               <i></i>
+               <span class="sp2"></span>
+             </a>
+           </li>
+           
+           <li>
+             <a class="title" href="index.php?m=default&c=user&a=paihang_detail_year_earnning">
+               <span class="sp1">年度收益排行榜</span>
+               <i></i>
+               <span class="sp2"></span>
+             </a>
+           </li>
+           
+           <div class="blank3"></div>
+           
+
+           
+           <div class="blank3"></div>
+           
+           <li>
+             <a class="title" href="index.php?m=default&c=user&a=paihang_detail_month_allayaccount">
+               <span class="sp1">每月粉丝排行榜</span>
+               <i></i>
+               <span class="sp2"></span>
+             </a>
+           </li>
+           
+           <li>
+             <a class="title" href="index.php?m=default&c=user&a=paihang_detail_month_earnning">
+               <span class="sp1">每月收益排行榜</span>
+               <i></i>
+               <span class="sp2"></span>
+             </a>
+           </li>
+           
+           <div class="blank3"></div>
+           
+           <li>
+             <a class="title" href="index.php?m=default&c=user&a=paihang_detail_week_allayaccount">
+               <span class="sp1">每周粉丝排行榜</span>
+               <i></i>
+               <span class="sp2"></span>
+             </a>
+           </li>
+           
+           <li>
+             <a class="title" href="index.php?m=default&c=user&a=paihang_detail_week_earnning">
+               <span class="sp1">每周收益排行榜</span>
+               <i></i>
+               <span class="sp2"></span>
+             </a>
+           </li>
+       </ul>
+</section>
+<!--end-->
+</div>
+<!-- #BeginLibraryItem "/library/search.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/user_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+</html>

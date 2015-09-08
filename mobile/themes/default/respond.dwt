@@ -1,0 +1,88 @@
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+
+<div class="con">
+
+<div class="ect-bg">
+  <header id="header" class="header">
+    <div class="user-header2">
+      <h1 >{$title}</h1>
+
+      <div class="header_l header_return"> <a class="ico_10_3" href="javascript:history.go(-1);"> 返回 </a> </div>
+
+      <div class="header_r header_search"> <a class="ico_18_3" href="javascript:void(0);"> 会员中心菜单</a> 
+      
+      
+      </div>
+      <!-- #BeginLibraryItem "/library/page_menu_member.lbi" --><!-- #EndLibraryItem --> 
+       
+      
+   </div>
+  </header>
+  
+  <div class="line-top"></div>
+  
+</div>
+
+  <div  style="text-align:center; margin-top:2em; font-size:1.3em;">
+
+<p>{$message}</p>
+
+    <!--{if $virtual_card}-->
+
+    <div class="alert alert-warning" role="alert">
+
+    <!--{foreach from=$virtual_card item=vgoods}-->
+
+        <h3 style="color:#2359B1; font-size:12px;">{$vgoods.goods_name}</h3>
+
+        <!--{foreach from=$vgoods.info item=card}-->
+
+        <ul style="list-style:none;padding:0;margin:0;clear:both">
+
+          <!--{if $card.card_sn}-->
+
+          <li style="margin-right:50px;float:left;"> <strong>{$lang.card_sn}:</strong><span style="color:red;">{$card.card_sn}</span> </li>
+
+          <!--{/if}--> 
+
+          <!--{if $card.card_password}-->
+
+          <li style="margin-right:50px;float:left;"> <strong>{$lang.card_password}:</strong><span style="color:red;">{$card.card_password}</span> </li>
+
+          <!--{/if}--> 
+
+          <!--{if $card.end_date}-->
+
+          <li style="float:left;"> <strong>{$lang.end_date}:</strong>{$card.end_date} </li>
+
+          <!--{/if}-->
+
+        </ul>
+
+        <!--{/foreach}--> 
+
+    <!--{/foreach}--> 
+
+    </div>
+
+    <!-- {/if} -->
+
+<div> 
+
+  <span class="p-link" style="margin-right:0.2em;"><a href="{$shop_url}">{$lang.back_home_respond}</a></span>
+
+</div>
+
+<div style="width:1px; height:1px; overflow:hidden">{foreach from=$lang.p_y item=pv}{$pv}{/foreach}</div>
+
+</div>
+
+</div>
+
+<!-- #BeginLibraryItem "/library/search.lbi" --><!-- #EndLibraryItem -->
+
+<!-- #BeginLibraryItem "/library/page_footer2.lbi" --><!-- #EndLibraryItem -->
+
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<div id="ECS_ORDERTOTAL">
+<div class="ect-padding-tb text-right good-getback">
+  <!-- {if $smarty.session.user_id > 0 and ( C('use_integral') or C('use_bonus') )} --> 
+
+  <!-- {if C('use_integral')} 是否使用积分-->
+  赠送{$points_name}：<b class="ect-colory">{$total.will_get_integral}</b><br/>
+  <!-- {/if} --> 
+
+  <!-- {if ('use_integral') and C('use_bonus')} 是否同时使用积分红包-->
+  <!-- {/if} --> 
+
+  <!-- {if C('use_bonus')} 是否使用红包-->
+  赠送优惠券：<b class="ect-colory">{$total.will_get_bonus}</b>
+  <!-- {/if} -->
+
+  <!-- {/if} --> 
+
+
+  <!-- {if $total.discount gt 0} 折扣 --> 
+  <!-- {/if} --> 
+
+  <!-- {if $total.tax gt 0} 税 --> 
+  <!-- {/if} --> 
+
+  <!-- {if $total.shipping_fee > 0} 配送费用 --> 
+  <!-- {/if} --> 
+
+  <!-- {if $total.shipping_insure > 0} 保价费用 --> 
+  <!-- {/if} --> 
+
+  <!-- {if $total.pay_fee > 0} 支付费用 --> 
+  <!-- {/if} --> 
+
+  <!-- {if $total.pack_fee > 0} 包装费用--> 
+  <!-- {/if} --> 
+
+  <!-- {if $total.card_fee > 0} 贺卡费用--> 
+  <!-- {/if} --> 
+
+  <!-- {if $total.surplus > 0 or $total.integral > 0 or $total.bonus > 0} 使用余额或积分或红包 --> 
+
+  <!-- {if $total.surplus > 0} 使用余额 --> 
+  <!-- {/if} --> 
+
+  <!-- {if $total.integral > 0} 使用积分 --> 
+  <!-- {/if} --> 
+
+  <!-- {if $total.bonus > 0} 使用红包 --> 
+  <!-- {/if} --> 
+
+  <!-- {/if} 使用余额或积分或红包 --> 
+
+  <!--{if $total.exchange_integral }消耗积分-->
+  <!--{/if}--> 
+
+</div>
+
+<section class="good-button">
+ <ul>
+  <li class="pay">实付款：<span>{$total.amount_formated}</span></li>
+  <li class="submit">
+   <input type="submit" name="submit" value="{$lang.order_submit}" class="button">
+   <input type="hidden" name="step" value="done" />
+  </li>
+ </ul>
+</section>
+</div>

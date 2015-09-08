@@ -1,0 +1,58 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<div class="clear"></div>
+
+<section class="h-recommend">
+
+  <div class="h-title1 h-title3">
+
+    <div class="title">
+
+     <span>你的专属推荐已更新</span>
+
+    </div>
+
+   </div>
+
+   <div class="h-recommend-box">
+
+   <div class="blank2"></div>
+
+     <ul>
+
+          <!--{foreach from=$best_goods item=goods name=best_goods}-->
+
+          {if $smarty.foreach.best_goods.iteration <9}
+
+          <li>
+
+            <a href="{$goods.url}"><img src="{$goods.thumb}" /></a>
+
+            <dl>
+
+              <dt><h4><a href="{$goods.url}">{$goods.name|escape:html}</a></h4></dt>
+
+              <dd>
+
+                <span class="price"><!-- {if $goods.promote_price neq ""} -->{$goods.promote_price}<!-- {else}-->{$goods.shop_price}<!--{/if}--></span>
+
+                <span class="same"><a href="index.php?m=default&c=category&a=index&id={$goods.cat_id}{if $smarty.session.user_id gt 0}&u={$smarty.session.user_id}{/if}">看相似</a></span>
+
+              </dd>
+
+            </dl>
+
+         </li>
+
+         {/if}
+
+         <!--{/foreach}-->
+
+     </ul>
+
+   </div>
+
+</section>
+
+<div class="clear"></div>
+

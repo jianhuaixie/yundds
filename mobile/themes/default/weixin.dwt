@@ -1,0 +1,692 @@
+<!-- #BeginLibraryItem "/library/page_header_index_weixin.lbi" --><!-- #EndLibraryItem -->
+
+
+
+<div class="con"> 
+
+
+
+
+
+
+
+  <header class="h-header">
+
+
+
+    <a href="./{if $smarty.session.user_id gt 0}?u={$smarty.session.user_id}{/if}" class="logo"><img src="images/yun1/logo2.png"  /></a>
+
+
+
+     <div class="search-box">
+
+
+
+      <div class="search-center">
+
+
+
+        <form action="{:url('category/index')}<!-- {if $id} -->&id={$id}<!-- {/if} -->"  method="post" id="searchForm" name="searchForm">
+
+
+
+         <input placeholder="云的商城-专卖正品 质在必得！" name="keywords" type="text" class="h-search-text"  id="keywordBox" />
+
+
+
+         <button type="submit" value="搜索" class="h-search-submit" onclick="return check('keywordBox')">
+
+
+
+         </button>
+
+
+
+         </form>
+
+
+
+       </div>
+
+
+
+     </div>
+
+
+
+     <a class="weixin" target="_blank">
+
+
+
+       <img class="weixin1" src="images/yun1/h-weixin2.png"  />
+
+
+
+     </a>
+
+
+
+     <!--<a href="#" class="app">
+
+
+
+       <img src="images/yun1/h-app.png" />
+
+
+
+     </a>-->
+
+
+
+  </header>
+
+  <!--微信 弹出层start-->
+   <div class="menu-bg3"></div>
+   <div class="h-out-weixin"><a><img src="images/yun1/pc-h-weixin2.gif" /></a></div>
+  <!--微信 弹出层end-->
+  
+
+  <div style="height:49px;"></div>
+
+
+
+ <!--头部 end-->
+
+
+
+  <div id="focus" class="focus region  ban-focus">
+
+
+
+    <div class="hd">
+
+
+
+      <ul>
+
+
+
+      </ul>
+
+
+
+    </div>
+
+
+
+    <div class="bd">
+
+
+
+      {insert name='ads' id=1 num=3}
+
+
+
+    </div>
+
+
+
+  </div>
+
+
+
+
+
+
+
+ <!--banner start-->
+
+
+
+ <script type="text/javascript">
+
+
+
+/*banner滚动图片*/
+
+
+
+	   //var a = $("#focus .bd li").first().innerHeight();
+
+
+
+	  // alert(a);
+
+
+
+	   //$("#focus .bd").css("height",a);
+
+
+
+	  // $("#focus .bd").css("overflow","hidden");
+
+
+
+	   TouchSlide({
+
+
+
+	   slideCell : "#focus",
+
+
+
+	   titCell : ".hd ul", // 开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+
+
+
+	   mainCell : ".bd ul",
+
+
+
+	   effect : "leftLoop",
+
+
+
+	   autoPlay : true, // 自动播放
+
+
+
+	   autoPage : true, // 自动分页
+
+
+
+	   delayTime: 200, // 毫秒；切换效果持续时间（执行一次效果用多少毫秒）
+
+
+
+	   interTime: 2500, // 毫秒；自动运行间隔（隔多少毫秒后执行下一个效果）
+
+
+
+	   //switchLoad : "_src" // 切换加载，真实图片路径为"_src"
+
+
+
+	})
+
+
+
+</script>
+
+
+
+<div class="blank2"></div>
+
+
+
+  <!--首页快速导航 start-->
+
+
+
+  <nav class="h-nav">
+
+
+
+     <ul>
+
+
+
+        <li class="a1">
+
+
+
+          <a href="{:url('category/top_all')}{if $smarty.session.user_id gt 0}&u={$smarty.session.user_id}{/if}">
+
+
+
+             <img src="images/yun1/h-nav1.jpg"  />
+
+
+
+             <p style="display:none;">
+
+
+
+               <span>全部分类</span>
+
+
+
+               <i>category</i>
+
+
+
+             </p>
+
+
+
+          </a>
+
+
+
+        </li>
+
+
+
+        
+
+
+
+        <li  class="a2">
+
+
+
+          <a href="{:url('user/index')}{if $smarty.session.user_id gt 0}&u={$smarty.session.user_id}{/if}">
+
+
+
+             <img src="images/yun1/h-nav2.jpg"  />
+
+
+
+              <p style="display:none;">
+
+
+
+               <span>我的云的</span>
+
+
+
+               <i>my yundds</i>
+
+
+
+             </p>
+
+
+
+          </a>
+
+
+
+        </li>
+
+
+
+        
+
+
+
+        <li  class="a3">
+
+
+
+          <a href="{:url('flow/cart')}{if $smarty.session.user_id gt 0}&u={$smarty.session.user_id}{/if}">
+
+
+
+             <img src="images/yun1/h-nav3.jpg"  />
+
+
+
+             <p style="display:none;">
+
+
+
+               <span>购物车</span>
+
+
+
+               <i>cart</i>
+
+
+
+             </p>
+
+
+
+          </a>
+
+
+
+        </li>
+
+
+
+     </ul>
+
+
+
+  </nav>
+
+
+
+  <!--首页快速导航 end-->
+
+
+
+  
+
+
+
+<!--今日最大牌 start-->
+
+
+
+<!-- #BeginLibraryItem "/library/index_zuidapai.lbi" --><!-- #EndLibraryItem -->
+
+
+
+<!--今日最大牌 end-->
+
+
+
+  
+
+
+
+<!--优惠券 start-->
+
+
+
+<section class="h-Coupons">
+
+
+
+   {insert name='ads' id=13 num=1}
+
+
+
+</section>
+
+
+
+<!--优惠券 end-->
+
+
+
+  
+
+
+
+<div class="blank2"></div>
+
+
+
+<!--每日必看 start-->
+
+
+
+<!--<section class="h-day-pro">
+
+
+
+  <ul>
+
+
+
+   <li class="clock"><a></a></li>
+
+
+
+   <li class="product1">{insert name='ads' id=2 num=1}</li>
+
+
+
+   <li class="product2">{insert name='ads' id=3 num=1}</li>
+
+
+
+  </ul>  
+
+
+
+</section>
+
+
+
+<div class="blank2"></div>-->
+
+
+
+<!--每日必看 end-->
+
+
+
+
+
+
+
+<!--今日剁手价 start-->
+
+
+
+<!-- #BeginLibraryItem "/library/recommend_promotion.lbi" --><!-- #EndLibraryItem -->
+
+
+
+<!--今日剁手价 end-->
+
+
+
+
+
+
+
+<!--热卖hot start-->
+
+
+
+<!-- #BeginLibraryItem "/library/recommend_hot.lbi" --><!-- #EndLibraryItem -->
+
+
+
+<!--热卖hot end-->
+
+
+
+
+
+<!--一楼 start-->
+
+
+
+<section class="h-floor">
+
+
+
+  <div class="h-floor-title"><span>1F 洗护区</span> <a href="http://www.yundds.com/mobile/index.php?m=default&c=category&a=index&id=337&display=grid&brand=0&price_min=0&price_max=0&filter_attr=0&sort=shop_price&order=DESC">查看更多>></a></div>
+
+
+
+  <div class="h-banner">{insert name='ads' id=9 num=1}</div>
+
+
+
+  <!-- #BeginLibraryItem "/library/index_1f.lbi" --><!-- #EndLibraryItem -->
+
+
+
+</section>
+
+
+
+<!--一楼 end-->
+
+
+
+
+
+
+
+<!--二楼 start-->
+
+
+
+<section class="h-floor">
+
+
+
+  <div class="h-floor-title"><span>2F 美妆区</span> <a href="http://www.yundds.com/mobile/index.php?m=default&c=category&a=index&id=294">查看更多>></a></div>
+
+
+
+  <div class="h-banner">{insert name='ads' id=10 num=1}</div>
+
+
+
+  <!-- #BeginLibraryItem "/library/index_2f.lbi" --><!-- #EndLibraryItem -->
+
+
+
+</section>
+
+
+
+<!--二楼 end-->
+
+
+
+
+
+
+
+<!--三楼 start-->
+
+
+
+<section class="h-floor">
+
+
+
+  <div class="h-floor-title"><span>3F 童装区</span> <a href="http://www.yundds.com/mobile/index.php?m=default&c=category&a=index&id=717">查看更多>></a></div>
+
+
+
+  <div class="h-banner">{insert name='ads' id=11 num=1}</div>
+
+
+
+  <!-- #BeginLibraryItem "/library/index_3f.lbi" --><!-- #EndLibraryItem -->
+
+
+
+</section>
+
+
+
+<!--三楼 end-->
+
+
+
+
+
+
+
+<!--四楼 start-->
+
+
+
+<section class="h-floor">
+
+
+
+  <div class="h-floor-title"><span>4F 男装区</span> <a href="http://www.yundds.com/mobile/index.php?m=default&c=category&a=index&id=17">查看更多>></a></div>
+
+
+
+  <div class="h-banner">{insert name='ads' id=12 num=1}</div>
+
+
+
+  <!-- #BeginLibraryItem "/library/index_4f.lbi" --><!-- #EndLibraryItem -->
+
+
+
+</section>
+
+
+
+<!--四楼 end-->
+
+
+
+
+
+
+
+<!--10点品牌团 start-->
+
+
+
+<!-- #BeginLibraryItem "/library/index_pinpaituan.lbi" --><!-- #EndLibraryItem -->
+
+
+
+<!--10点品牌团 end-->
+
+
+
+
+
+
+
+<!--正品保证 start-->
+
+
+
+<!--<div class="h-promise"><img src="images/yun1/h-promise-2.jpg" /></div>-->
+
+
+
+<!--正品保证 end-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--专属推荐 start-->
+
+
+
+<!-- #BeginLibraryItem "/library/index_tuijian.lbi" --><!-- #EndLibraryItem -->
+
+
+
+<!--专属推荐 end-->
+
+
+
+  
+
+
+
+</div>
+
+
+
+<!-- #BeginLibraryItem "/library/search.lbi" --><!-- #EndLibraryItem -->
+
+
+
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem --> 
+
+
+
+<div class="bottom-mg"></div>
+
+   <script type="text/javascript">
+     $(".weixin").click(function(){
+		   $(".menu-bg3").css("display","block");
+		   $(".h-out-weixin").css("display","block");
+		 })
+	$(".menu-bg3").click(function(){
+		  $(".menu-bg3").css("display","none");
+		   $(".h-out-weixin").css("display","none");
+		})
+   </script>
+
+</body>
+
+
+
+</html>

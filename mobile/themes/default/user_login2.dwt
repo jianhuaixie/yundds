@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+<html lang="zh-CN">
+
+
+
+
+
+
+
+<head>
+
+
+
+
+
+
+
+<meta charset="utf-8">
+
+
+
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+
+
+
+
+
+
+<meta name="Keywords" content="{$meta_keywords}" />
+
+
+
+
+
+
+
+<meta name="Description" content="{$meta_description}" />
+
+
+
+
+
+
+
+<title>{$page_title}</title>
+
+
+
+
+
+
+
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/bootstrap.min.css">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="__PUBLIC__/bootstrap/css/font-awesome.min.css">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="{$ectouch_css_path}">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="__TPL__/css/style.css">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="__TPL__/css/user.css">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="__TPL__/css/photoswipe.css">
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+<body class="login-bg">
+
+
+
+
+
+
+
+<div class="con">
+
+
+
+
+
+
+
+<header class="login-header">
+
+
+
+  <div class="user-header">
+
+
+
+    <h1 >{$title}</h1>
+
+
+
+    <div class="header_l header_return"> <a class="login-back" href="javascript:history.go(-1);"><i class="fa fa-back"></i></a> </div>
+
+
+
+  </div>
+
+
+
+</header>
+
+
+
+
+
+
+
+<!--login start-->
+
+
+
+<div class="login-box">
+
+
+
+ <form name="formLogin" action="{:url('user/login')}" method="post" class="validforms">
+
+
+
+
+
+
+
+   <div class="flow-consignee ect-bg-colorf">
+
+
+
+     <section>
+
+
+
+      <ul>
+
+
+
+   		<li>
+
+
+
+
+
+
+
+    		<div class="input-text"><b><i class="user_ico"></i></b><span><input placeholder="{$lang.mobile}号码" name="username" type="text"  class="inputBg" id="username" datatype="*" ></span></div>
+
+
+
+
+
+
+
+        </li>
+
+
+
+        <div class="login-line1"></div>
+
+
+
+        <li>
+
+
+
+
+
+
+
+    		<div class="input-text"><b><i class="password_ico"></i></b><span><input placeholder="{$lang.label_password}"  name="password" type="password" class="inputBg" datatype="*6-16" /></span></div>
+
+
+
+
+
+
+
+        </li>
+
+
+
+        <div class="login-line1"></div>
+
+
+
+        <!-- 判断是否启用验证码{if $enabled_captcha} -->
+
+
+
+
+
+
+
+       <li>
+
+
+
+
+
+
+
+          <div class="input-text code"><b><i class="password_ico"></i></b><span>
+
+
+
+
+
+
+
+             <input name="captcha" type="text" class="inputBg" placeholder="{$lang.comment_captcha}">
+
+
+
+
+
+
+
+             </span><img src="{:url('Public/captcha', array('rand'=>$this->_var['rand']))}" alt="captcha" class="img-yzm pull-right" onClick="this.src='{:url('public/captcha')}&t='+Math.random()" /></div>
+
+
+
+
+
+
+
+            </li>
+
+
+
+            <div class="login-line1"></div>
+
+
+
+            <!--{/if}-->
+
+
+
+        </ul>
+
+
+
+      </section>
+
+
+
+    </div>
+
+
+
+
+
+
+
+  <p class="ect-checkbox ect-padding-tb ect-margin-tb ect-margin-bottom0 ect-padding-lr ">
+
+
+
+
+
+
+
+     <input type="checkbox" value="1" name="remember" id="remember" class="l-checkbox" />
+
+
+
+
+
+
+
+     <label for="remember">{$lang.remember}<i></i></label>
+
+
+
+
+
+
+
+      <!-- {if $anonymous_buy eq 1 && $step eq 'flow'} 是否允许未登录用户购物 -->
+
+
+
+
+
+
+
+      <a href="{:url('flow/consignee',array('direct_shopping'=>1))}" style="float:right;">{$lang.direct_shopping}</a>
+
+
+
+
+
+
+
+      <!-- {/if} -->
+
+
+
+
+
+
+
+     
+
+
+
+
+
+
+
+  </p>
+
+
+
+
+
+
+
+   <input type="hidden" name="back_act" value="{$back_act}" />
+
+
+
+
+
+
+
+  <div class="ect-padding-lr ect-padding-tb login-bt"> 
+
+
+
+
+
+
+
+  <input type="submit" class="btn btn-info ect-btn-info ect-bg" value="登录" />
+
+
+
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+  </form>
+
+
+
+
+
+
+
+  <p class="ect-padding-lr ect-margin-tb text-right ect-margin-bottom0 login-mz" style="clear:both;">
+
+
+
+
+
+
+
+	<a class="ma" href="{:url('user/get_password_phone')}">{$lang.forgot_password}</a>  
+
+
+
+
+
+
+
+	<a class="zc" href="{:url('user/register')}">{$lang.free_registered}</a>
+
+
+
+
+
+
+
+  </p>
+
+
+
+
+
+
+
+<div class="ect-padding-lr ect-margin-tb user-hezuo">
+
+
+
+
+
+
+
+  	{$lang.third_login}
+
+
+
+
+
+
+
+  	<p>
+
+
+
+
+
+
+
+    	<a href="{:url('user/third_login',array('type'=>'qq'))}"><img src="__TPL__/images/qq.png"></a>
+
+
+
+
+
+
+
+        <a href="{:url('user/third_login',array('type'=>'sina'))}"><img src="__TPL__/images/weibo.png"></a>
+
+
+
+
+
+
+
+    </p>
+
+
+
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+</div>
+
+
+
+<!--login end-->
+
+
+
+</div>
+
+
+
+
+
+
+
+  <div class="clear"></div>
+
+
+<div class="blank3"></div>
+
+<div class="blank3"></div>
+
+
+
+
+  <!--7天保证 start-->
+
+
+
+  <div class="login-promise">
+
+
+
+    <ul>
+
+
+
+      <li><span>七天无理由退换货</span></li>
+
+
+
+      <li><span>100%正品</span></li>
+
+
+
+  <!--    <li><span>支持货到付款</span></li>
+
+-->
+
+    </ul>
+
+
+
+  </div>
+
+
+
+  <!--7天保证 end-->
+
+
+
+  
+
+
+
+<!-- #BeginLibraryItem "/library/search.lbi" --><!-- #EndLibraryItem -->
+
+
+
+<script type="text/javascript" src="__PUBLIC__/js/jquery.min.js" ></script> 
+
+
+
+</body>
+
+
+
+
+
+
+
+</html>
+
+
+
+
+
+
+

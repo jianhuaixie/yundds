@@ -1,0 +1,7 @@
+<ul class="ect-diaplay-box text-center">
+  <li class="ect-box-flex"><a href="./{if $smarty.session.user_id gt 0}?u={$smarty.session.user_id}{/if}"><i class="ect-icon ect-icon-home"></i><span>首页</span></a></li>
+  <li class="ect-box-flex"><a href="{:url('category/top_all')}"><i class="ect-icon ect-icon-cate"></i><span>分类</span></a></li>
+  <li class="ect-box-flex"><a href="javascript:openSearch();"><i class="ect-icon ect-icon-search"></i><span>搜索</span></a></li>
+  <li class="ect-box-flex"><a href="{:url('flow/cart')}"><i class="ect-icon ect-icon-flow"><strong class="num{insert name='cart_info_number'}">{insert name='cart_info_number'}</strong></i><span>购物车</span></a></li>
+  <li class="ect-box-flex"><a href="{:url('user/index')}"><i class="ect-icon ect-icon-user"><strong class="num0">0</strong></i><span>我的</span></a></li>
+</ul>

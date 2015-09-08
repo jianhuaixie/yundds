@@ -1,0 +1,319 @@
+<div class="con1">
+<header id="header" class="header">
+  <div class="user-header">
+    <h1 >{$title}</h1>
+    <div class="header_l header_return"> <a class="ico_10_3" href="javascript:history.go(-1);"> 返回 </a> </div>
+    <div class="header_r header_search"> <a class="ico_18_3" href="./{if $smarty.session.user_id gt 0}?u={$smarty.session.user_id}{/if}"> 会员中心菜单</a> </div>
+  </div>
+</header>
+
+ <div class="line-top"></div>
+
+  <section class="flow-order-box">
+  <div class="flow-checkout">
+
+    <form action="{:url('flow/done')}" method="post" name="theForm" id="theForm" onSubmit="return checkOrderForm(this)">
+      <script type="text/javascript">
+        var flow_no_payment = "{$lang.flow_no_payment}";
+        var flow_no_shipping = "{$lang.flow_no_shipping}";
+      </script><a href="{:url('flow/consignee_list')}">
+      <section class="ect-margin-tb ect-padding-lr ect-padding-tb man-detail-wrap">
+      <div class="man-detail">
+          <label for="addressId{$con_list.address_id}">
+          <p class="title"><em class="name"></em>{$consignee.consignee|escape} <span><em class="phone"></em>{$consignee.mobile}</span></p>
+          <p><em class="address"></em>{$consignee.region}{$consignee.address}</p>
+          <i class="ico"></i>
+          </label>
+         </div>
+        </section>
+      </a>
+      
+   <section class="goods-change">
+     <div class="goods-box">
+       <a href="{:url('flow/index')}" class="title">
+       <div class="goods-box-left swiper-container swiper-car">
+          <div class="pagination-car">
+         </div>
+          <ul class="swiper-wrapper">
+            <!-- {foreach from=$goods_list item=goods} -->
+            <li  class="swiper-slide"><img src="{$goods.goods_thumb}" /></li>
+            <!-- {/foreach} -->
+          </ul>
+          </div>
+          <i class="ico"></i>
+          <span class="sp2">共{insert name='cart_info_number'}件</span>
+       </a>
+     </div>
+   </section>
+
+   <!--选择物流 支付方式 start-->
+   <section class="goods-change goods-send">
+     <div class="send">
+       <a class="title">
+          <span class="sp1">选择物流</span>
+          <i class="ico"></i>
+          <span class="sp2">默认快递 免邮</span>
+       </a>
+     </div>
+     
+     <div class="pay last">
+       <a class="title">
+          <span class="sp1">支付方式</span>
+          <i class="ico"></i>
+          <span class="sp2">余额支付</span>
+       </a>
+     </div>
+   </section>
+   <!--选择物流 支付方式 end-->
+   
+<!--选择物流弹出层 start-->
+   <div class="menu-bg5"></div>
+   <div class="goods-change good-show-box good-logistics">
+      <h4>选择物流</h4>
+      <!--循环 start-->
+        <!-- {foreach from=$shipping_list item=shipping} 循环配送方式 -->
+        <div class="pay-way-select">
+          <a class="title">
+          <span class="sp1">{$shipping.shipping_name}<em>{if $shipping.shipping_fee eq 0}免邮{else}{$shipping.format_shipping_fee}{/if}</em></span>
+          <dl>
+            <input name="shipping" type="radio" id="shipping_{$shipping.shipping_id}" value="{$shipping.shipping_id}" title="{$shipping.shipping_name} {if $shipping.shipping_fee eq 0}免邮{else}{$shipping.format_shipping_fee}{/if}" {if $order.shipping_id eq $shipping.shipping_id or $shipping.shipping_id eq 1}checked="true"{/if} supportCod="{$shipping.support_cod}" insure="{$shipping.insure}" onclick="selectShipping(this)">
+            <label for="shipping_{$shipping.shipping_id}" class="label"><i></i></label>
+           </dl>       
+           </a>
+        </div>
+        <!-- {/foreach} 循环配送方式 -->
+      <!--循环 end-->
+   </div>
+   <!--选择物流弹出层 end-->
+   
+   <!--支付方式弹出层 start-->
+   <div class="menu-bg6"></div>
+   <div class="goods-change good-show-box good-payway">
+      <h4>支付方式</h4>
+      <!--循环 start-->
+        <!-- {foreach from=$payment_list item=payment} -->
+        <div class="pay-way-select">
+          <a class="title">
+          <span class="sp1">{$payment.pay_name}</span>
+          <dl>
+            <input name="payment" type="radio" id="payment_{$payment.pay_id}" value="{$payment.pay_id}" title="{$payment.pay_name}" {if $order.pay_id eq $payment.pay_id or $payment.pay_id eq 1}checked{/if} isCod="{$payment.is_cod}" onclick="selectPayment(this)" {if $cod_disabled and $payment.is_cod eq "1"}disabled="true"{/if} style="vertical-align:middle">
+            <label for="payment_{$payment.pay_id}" class="label"><i></i></label> 
+           </dl>       
+           </a>
+        </div>
+        <!-- {/foreach} -->
+      <!--循环 end-->
+      
+      <!-- {if $allow_use_surplus} 是否使用余额 -->
+      <div class="remain-way">
+         余额支付：
+         <span id="ECS_SURPLUS_NOTICE"></span>
+      	 <input name="surplus" type="text" id="ECS_SURPLUS" value="{$order.surplus|default:0}" class="remain-pay" onblur="changeSurplus(this.value)" {if $disable_surplus}disabled="disabled"{/if} />
+         <span>可用余额：{$your_surplus|default:0}</span>
+      </div>
+      <!-- {/if} 是否使用余额 -->
+      <p>
+         <a class="a1">取消</a>
+         <a class="a2">确定</a>
+      </p>
+      
+   </div>
+   <!--支付方式弹出层 end-->
+   
+   <!--可用积分 start-->
+   <!-- {if $allow_use_integral} 是否使用积分 -->
+   <section class="goods-change goods-point">
+     <div>
+       <a class="title">
+          <span class="sp1 emfixed">您有{$your_integral|default:0}{$points_name}，可用{$can_use_point}{$points_name}抵{$your_integral_price}</span>
+
+           <dl>
+              <input name="integral" type="checkbox" id="ECS_INTEGRAL" checked value="{$can_use_point}" style="vertical-align:middle">
+              <label for="ECS_INTEGRAL" class="label"><i></i></label>
+           </dl>
+       </a>
+     </div>
+   </section>
+   <!-- {/if} 是否使用积分 -->
+   <!--可用积分 end-->
+
+   <!-- {if $allow_use_bonus and $bonus_list} 是否使用红包 -->
+   <!--可用优惠券 start-->
+   <section class="goods-change goods-coupon">
+     <div>
+       <a class="title">
+          <span class="sp1">有可用优惠券</span>  <!--若没有可用的优惠券就显示 没有可用优惠券  并把链接去掉-->
+          <i class="ico"></i>
+          <span class="sp2">不使用优惠券</span>
+       </a> 
+     </div>
+   </section>
+   <!--可用优惠券 end-->
+   
+   <!--选择优惠券弹出层 start-->
+   <div class="menu-bg5"></div>
+   <div class="goods-change good-show-box good-Coupons-box">
+      <h4>选择优惠券</h4>
+      <!--循环 start-->
+      
+      <div class="pay-way-select">
+          <a class="title">
+          <span class="sp1">不使用优惠券</span>
+          <dl>
+            <input  type="radio" id="bonus_{$bonus.bonus_id}" name="bonus" value="0" title="不使用优惠券" {if $order.bonus_id eq 0}checked="true"{/if} onclick="changeBonus(this)" style="vertical-align:middle">
+            <label for="bonus_{$bonus.bonus_id}" class="label"><i></i></label>
+           </dl>
+           </a>
+        </div>
+        
+		<!-- {foreach from=$bonus_list item=bonus} 循环红包 -->
+        <div class="pay-way-select">
+          <a class="title">
+          <span class="sp1 emfixed">{$bonus.type_name}[{$bonus.bonus_money_formated}]</span>
+          <dl>
+            <input type="radio" name="bonus" id="bonus_{$bonus.bonus_id}" value="{$bonus.bonus_id}" title="{$bonus.type_name}[{$bonus.bonus_money_formated}]" {if $order.bonus_id eq $bonus.bonus_id}checked="true"{/if} onclick="changeBonus(this)" style="vertical-align:middle" />
+            <label for="bonus_{$bonus.bonus_id}" class="label"><i></i></label>
+           </dl>
+           </a>
+        </div>    
+        <!-- {/foreach} 循环红包 --> 
+      <!--循环 end-->
+   </div>
+   <!--选择优惠券弹出层 end-->
+   <!-- {/if} 是否使用红包 -->
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+      <!-- {if $pack_list || $card_list} 是否有包装 或贺卡 -->
+
+      <section class="ect-margin-tb ect-padding-lr checkout-select"> 
+
+        <!-- {if $pack_list} 是否有包装 --> 
+
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+
+        <p><b>{$lang.goods_package}</b></p>
+
+        <i class="fa fa-angle-down"></i></a>
+
+        <div id="collapseThree" class="panel-collapse collapse in">
+
+          <ul class="ect-radio">
+
+            <li>
+
+              <input  type="radio" id="pack_{$pack.pack_id}"  name="pack" value="0" {if $order.pack_id eq 0}checked="true"{/if} onclick="selectPack(this)" >
+
+              <label for="pack_{$pack.pack_id}">{$lang.no_pack}<i></i></label>
+
+            </li>
+
+            <!-- {foreach from=$pack_list item=pack} 循环包装 -->
+
+            <li>
+
+              <input type="radio" class="radio" name="pack" id="pack_{$pack.pack_id}" value="{$pack.pack_id}" {if $order.pack_id eq $pack.pack_id}checked="true"{/if} onclick="selectPack(this)" />
+
+              <label for="pack_{$pack.pack_id}">{$pack.pack_name}[{$pack.format_pack_fee}][{$lang.free_money}:{$pack.format_free_money}]<i></i></label>
+
+            </li>
+
+            <!-- {/foreach} 循环包装 -->
+
+          </ul>
+
+        </div>
+
+        <!-- {/if} 是否使用包装 --> 
+
+        <!-- {if $card_list} 是否有贺卡 --> 
+
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+
+        <p><b>{$lang.goods_card}</b></p>
+
+        <i class="fa fa-angle-down"></i></a>
+
+        <div id="collapseFour" class="panel-collapse collapse in">
+
+          <ul class="ect-radio">
+
+            <li>
+
+              <input name="card" type="radio"  value="0" {if $order.card_id eq 0}checked="true"{/if} onclick="selectCard(this)" id="card_0" />
+
+              <label for="card_0">{$lang.no_card}<i></i></label>
+
+            </li>
+
+            <!-- {foreach from=$card_list item=card} 循环贺卡 -->
+
+            <li>
+
+              <input name="card" type="radio" id="card_{$card.card_id}" value="{$card.card_id}" {if $order.card_id eq $card.card_id}checked="true"{/if} onclick="selectCard(this)">
+
+              <label for="card_{$card.card_id}">{$card.card_name}[{$card.format_card_fee}][{$lang.free_money}:{$card.format_free_money}]<i></i></label>
+
+            </li>
+
+            <!-- {/foreach} 循环贺卡 -->
+
+          </ul>
+
+          <input name="" type="text" placeholder="{$lang.bless_note}">
+
+        </div>
+
+      </section>
+
+      <!-- {/if} 是否使用贺卡 --> 
+
+      <!-- {/if} 是否有包装 或贺卡 -->
+
+      
+
+      <section class="ect-margin-tb ect-padding-lr checkout-select"> 
+
+	  <!-- {if $allow_use_bonus and $bonus_list} 是否使用红包 -->
+
+      <!-- {/if} 是否使用红包 -->
+
+
+        
+
+        <!-- {if $allow_use_integral} 是否使用积分 --> 
+
+        <!-- {/if} 是否使用积分 --> 
+
+      </section>
+      
+   <section class="goods-feedback">
+     <div>
+       <input name="postscript" type="textarea" class="feedback" placeholder="给商家留言">
+     </div>
+   </section>
+
+  <section class="order-price">
+  <!-- #BeginLibraryItem "/Library/order_total.lbi" --><!-- #EndLibraryItem -->
+  <div style="height:3em;></div>
+  </section>
+
+    </form>
+
+  </div>
+  </section>
+</div>

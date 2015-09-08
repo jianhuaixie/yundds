@@ -1,0 +1,17 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<section class="h-food">
+   <div class="h-title1 h-title2">
+    <div class="title">
+     <span></span>
+    </div>
+   </div>
+   
+   <div class="h-food-box">
+     <ul>
+       <li class="food-left1"><a><img src="images/yun1/h-food-pic1.jpg" /></a></li>
+       <li class="food-left2"><a><img src="images/yun1/h-food-pic2.jpg" /></a></li>
+     </ul>
+   </div>
+</section>
+<div class="clear"></div>
+<div class="blank2"></div>

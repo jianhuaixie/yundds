@@ -1,0 +1,19 @@
+<!-- 商品列表 start-->
+
+<a href="{$hot_goods.url}"><img src="{$hot_goods.goods_img}" alt="{$hot_goods.name}"></a>
+
+<dl>
+
+  <dt><h4><a href="{$hot_goods.url}">{$hot_goods.name}</a></h4></dt>
+
+  <dd>
+
+    <span class="price"><!--{if $hot_goods.promote_price}-->{$hot_goods.promote_price}<!--{else}-->{$hot_goods.shop_price}<!--{/if}--></span>
+
+    <span class="same"><a href="index.php?m=default&c=category&a=index&id={$hot_goods.cat_id}{if $smarty.session.user_id gt 0}&u={$smarty.session.user_id}{/if}">看相似</a></span>
+
+  </dd>
+
+</dl>
+
+<!-- 商品列表 end--> 

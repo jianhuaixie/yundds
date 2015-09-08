@@ -1,0 +1,99 @@
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+
+<div class="con">
+
+<header id="header" class="header" >
+  <div class="header_l header_return"> <a class="ico_10_3" href="javascript:history.go(-1)"> 返回 </a> </div>
+    <h1> 所有分类页 </h1>
+  <div class="header_r header_search"> <a class="ico_03_02" href="javascript:openSearch();"> 搜索 </a> </div>
+</header>
+
+<div class="panel panel-default ect-category-all ect-border-radius0" >
+
+    <ul>
+
+     <!--{foreach from=$category item=cat name=no}-->
+
+     <li>
+
+     	<!--{if $cat.cat_id}-->
+
+        <div class="media panel-body"> 
+
+            <div class="pull-left ect-category-right">
+
+                <h3>{$cat.name|escape:html}</h3>
+
+                <h5 style="display:none;"> <!--{foreach from=$cat.cat_id item=child name=no1}-->
+
+            <!--{if $smarty.foreach.no1.index lt 3}-->
+
+            <!--{if $smarty.foreach.no1.index gt 0}-->/<!--{/if}-->
+
+            {$child.name|escape:html|truncate:5,false} 
+
+            <!--{/if}-->
+
+            <!--{/foreach}--></h5>
+
+            </div>
+
+            <i class="fa fa-angle-down ect-transition05"></i>
+
+        </div>
+
+        <!--{else}-->
+
+        <a href="{:url('category/index',array('id'=>$this->_var['cat']['id']))}"><div class="media panel-body"> 
+
+            <div class="pull-left ect-category-right">
+
+                <h3>{$cat.name|escape:html}</h3>
+
+                <h5 style="display:none;"> <!--{foreach from=$cat.cat_id item=child name=no1}-->
+
+            <!--{if $smarty.foreach.no1.index lt 3}-->
+
+            <!--{if $smarty.foreach.no1.index gt 0}-->/<!--{/if}-->
+
+            {$child.name|escape:html|truncate:5,false} 
+
+            <!--{/if}-->
+
+            <!--{/foreach}--></h5>
+
+            </div>
+
+            <i class="fa fa-angle-right ect-transition05"></i>
+
+        </div></a>
+
+        <!--{/if}-->
+
+        <div class="ect-category-child">
+
+        <!--{foreach from=$cat.cat_id item=child name=no1}-->
+
+        <a href="{$child.url}">{$child.name|escape:html}</a>
+
+        <!--{/foreach}--> 
+
+        </div>
+
+      </li>
+
+      <!--{/foreach}-->
+
+    </ul> 
+
+</div>
+
+</div>
+
+<!-- #BeginLibraryItem "/library/search.lbi" --><!-- #EndLibraryItem -->
+
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+
+</body>
+
+</html>

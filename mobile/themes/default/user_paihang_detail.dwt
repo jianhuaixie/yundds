@@ -1,0 +1,45 @@
+<!-- #BeginLibraryItem "/library/user_header.lbi" --><!-- #EndLibraryItem -->
+<!--start-->
+<section class="user-ranking user-ranking2">
+
+
+
+
+
+<!--{foreach from=$userinfo_list item=userinfo_list name=no}-->
+     <li>
+         <dl><a><img src="{$userinfo_list.0}"/></a></dl>
+         <h4><a class="color1">{$userinfo_list.1}</a></h4>
+         <div>
+           <span class="name">{$userinfo_list.2}</span>
+           <span class="num">{$userinfo_list.3}</span>
+         </div>
+         <p>推广收益：{$userinfo_list.4}</p>  
+
+         
+         <!-- {if $smarty.foreach.no.iteration eq 1 }-->
+         <em><img src="images/user-top1-ico.png" /></em>
+         <!-- {elseif  $smarty.foreach.no.iteration eq 2} -->
+         <em><img src="images/user-top2-ico.png" /></em>
+         <!-- {elseif  $smarty.foreach.no.iteration eq 3} -->
+         <em><img src="images/user-top3-ico.png" /></em>
+         <!--{else}-->
+         <em>{$smarty.foreach.no.iteration}</em>
+         <!--{/if}-->
+         
+         
+     </li>
+ <!--{/foreach}-->  
+    
+
+     
+</section>
+
+
+
+<!--end-->
+</div>
+<!-- #BeginLibraryItem "/library/search.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/user_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+</html>

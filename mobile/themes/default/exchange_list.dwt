@@ -1,0 +1,60 @@
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+
+
+<div class="con">
+
+
+<div style="height:6em;"></div>
+
+
+  <header id="header">
+
+
+  <div class="header_l header_return"> <a class="ico_10" href="javascript:history.go(-1)"> 返回 </a> </div>
+
+
+    <h1> 所有分类页 </h1>
+
+
+  <div class="header_r header_search"> <a class="ico_03" href="javascript:openSearch();"> 搜索 </a> </div>
+
+
+</header>
+
+
+<!-- #BeginLibraryItem "/library/goods_list_exchange.lbi" --><!-- #EndLibraryItem -->
+
+
+</div>
+
+
+</div>
+
+
+<!-- #BeginLibraryItem "/library/search.lbi" --><!-- #EndLibraryItem --> 
+
+
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem --> 
+
+
+<script type="text/javascript">
+
+
+<!--{if $show_asynclist}-->
+
+
+get_asynclist("{:url('exchange/asynclist_list', array('page'=>$this->_var['page'], 'sort'=>$this->_var['sort'], 'order'=>$this->_var['order']))}" , '__TPL__/images/loader.gif');
+
+
+<!--{/if}-->
+
+
+</script>
+
+
+</body>
+
+
+</html>
+
+

@@ -1,0 +1,47 @@
+<!-- #BeginLibraryItem "/library/user_header.lbi" --><!-- #EndLibraryItem -->
+
+<section class="balance2_list" style="margin:50px 0 0;">
+
+<form action="{:url('user/edit_avatar')}" method="post" enctype="multipart/form-data" class="form-horizontal" role="form" >
+
+  <table id="general-table" class="table table-hover ectouch-table">
+
+    <tr>
+
+      <td>上传头像图片</td>
+
+      <td>
+
+        <div class="col-md-5"><input type="file" name="avatar" class="form-control input-sm" /></div>
+
+      </td>
+
+    </tr>
+
+    
+
+    <tr>
+
+      <td></td>
+
+      <td><div class="col-md-4">
+
+          <input type="hidden" name="act" value="edit_avatar" />
+
+          <input type="submit" value="提交" class="btn btn-primary" />
+
+        </div></td>
+
+    </tr>
+
+  </table>
+
+</form>
+
+</section>
+</div>
+<!-- #BeginLibraryItem "/library/search.lbi" --><!-- #EndLibraryItem -->
+
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem --> 
+
+</body></html>

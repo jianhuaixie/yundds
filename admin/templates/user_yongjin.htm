@@ -1,0 +1,58 @@
+<!-- $Id: user_yongjin.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+{if $full_page}
+{include file="pageheader.htm"}
+{insert_scripts files="../js/utils.js,listtable.js"}
+
+<form method="post" action="" name="listForm">
+<!-- start ads list -->
+<div class="list-div" id="listDiv">
+{/if}
+
+<table cellspacing='1' id="list-table">
+  <tr>
+    <th>等级</th>
+    <th>名称</th>
+    <th>层数</th>
+    <th>佣金比例（%）</th>
+    <th>最小等级积分</th>
+    <th>最大等级积分</th>
+    <th>最小推荐人数</th>
+    <th>最大推荐人数</th>
+    <th>最小团队推荐人数</th>
+    <th>最大团队推荐人数</th>
+    <th>{$lang.handler}</th>
+  </tr>
+  {foreach from=$user_ranks item=rank name=ceng}
+  <tr>
+    <td class="first-cell" align="center"><span onclick="listTable.edit(this,'edit_fenxiao_rank', {$rank.rank_id})">{$rank.fenxiao_rank}</span></td>
+    <td align="center"><span onclick="listTable.edit(this,'edit_name', {$rank.rank_id})">{$rank.rank_name}</span></td>
+    <td align="center"><span onclick="listTable.edit(this,'edit_cengshu', {$rank.rank_id})">{$rank.cengshu}</span></td>
+    <td align="center"><span onclick="listTable.edit(this, 'edit_discount', {$rank.rank_id})">{$rank.discount}</span></td>
+    <td align="center"><span onclick="listTable.edit(this, 'edit_min_points', {$rank.rank_id})">{$rank.min_points}</span></td>
+    <td align="center"><span onclick="listTable.edit(this, 'edit_max_points', {$rank.rank_id})">{$rank.max_points}</span></td>
+	<td align="center"><span onclick="listTable.edit(this, 'edit_min_rec', {$rank.rank_id})">{$rank.min_rec}</span></td>
+    <td align="center"><span onclick="listTable.edit(this, 'edit_max_rec', {$rank.rank_id})">{$rank.max_rec}</span></td>
+    <td align="center"><span onclick="listTable.edit(this, 'edit_min_group_rec', {$rank.rank_id})">{$rank.min_group_rec}</span></td>
+    <td align="center"><span onclick="listTable.edit(this, 'edit_max_group_rec', {$rank.rank_id})">{$rank.max_group_rec}</span></td>
+    <td align="center"><a href="javascript:;" onclick="listTable.remove({$rank.rank_id}, '{$lang.drop_confirm}')" title="{$lang.remove}"><img src="images/icon_drop.gif" border="0" height="21" width="21"/></a></td>
+  </tr>
+  {/foreach}
+  </table>
+
+{if $full_page}
+</div>
+<!-- end user ranks list -->
+</form>
+<script type="Text/Javascript" language="JavaScript">
+<!--
+{literal}
+onload = function()
+{
+    // 开始检查订单
+    startCheckOrder();
+}
+{/literal}
+//-->
+</script>
+{include file="pagefooter.htm"}
+{/if}

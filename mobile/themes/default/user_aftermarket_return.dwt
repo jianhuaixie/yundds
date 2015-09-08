@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="charset" content="utf-8">
+<title> 退货</title>
+<link rel="prefetch" href="http://assets.alicdn.com/mw/base/styles/component/more/images/loading.gif">
+<link rel="prefetch" href="http://at.alicdn.com/t/font_1427779172_5609531.woff">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta id="stopUsePullRefresh" value="true">
+<LINK rel=stylesheet type=text/css href="__TPL__/css/aftermarket.css">
+<link rel="stylesheet" href="__TPL__/css/index-min.css" charset="utf-8">
+<script type="text/javascript" src="__PUBLIC__/js/jquery.min.js" ></script> 
+</head>
+<body>
+<form class="f-form" method="post" action="{:url('user/to_return')}" enctype="multipart/form-data" name="serviceform" novalidate="novalidate">
+<div style="top: 0px; min-height: 567px; opacity: 1;" id="page">
+  <div id="wrapper">
+    <div id="scroller">
+      <div class="panel panel-form">
+        <div class="panel-body">
+          <div id="J_ModId_3">
+              <div class="bidi-viewer" data-view="form">
+                <div id="bidi-form-84" class="f-field">
+                  <div class="row" >
+                    <div class="f-label"><em>*</em>选择快递</div>
+                    <div class="f-controls select-wrapper">
+                    	<label class="f-label" style="width:0;"><em>*</em></label>
+                          <select name="back_other_shipping" id="back_other_shipping">
+                            <option value="0" >其他</option>
+                            <!--{foreach from=$lang.postcom item=shipping name=shipping_list}-->
+                            <option value="{$shipping.name}" >{$shipping.name}</option>
+                            <!--{/foreach}-->
+                          </select>
+                          <!--<input class="input-l input-content-len-10 J_InputFee" name="back_other_shipping" id="back_other_shipping" type="text"  placeholder="退货商品快递名称">-->
+                    </div>
+                  </div>
+                </div>
+                <div id="bidi-form-84" class="f-field">
+                  <div class="row">
+                    <label class="f-label" style="width:auto;"><em>*</em></label>
+                    <input class="input-l input-content-len-10 J_InputFee" name="back_invoice_no" id="back_invoice_no" type="text" placeholder="退回商品快递单号">
+                  </div>
+                </div>
+                <input name="ret_id" value="{$ret_id}" type="hidden" >
+                <div style="display: none;" class="msg-wrapper"></div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-actionbar J_Actionbar">
+    <div id="J_ModId_4">
+      <div class="btn-box bar-main">
+        <div class="bar-item">
+          <button class="J_Btn attention-btn" type="button"  onclick="check_service()">提交</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+<script>
+	function check_service(){
+		var shipping = $("#back_other_shipping").val();
+		var invoice_no = $("#back_invoice_no").val();
+		if(invoice_no.length > 0 && shipping.length > 0){
+			document.forms['serviceform'].submit();
+		}else{
+			alert('请填写退货信息');
+		}
+	}
+</script>
+</body>
+</html>

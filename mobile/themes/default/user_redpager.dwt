@@ -1,0 +1,206 @@
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+
+<div class="con con2">
+
+<header id="header" class="header">
+
+  <div class="user-header">
+    <h1 >{$title}</h1>
+    <div class="header_l header_return"> <a class="ico_10_3" href="{:url('user/my_tuiguang')}"> 返回 </a> </div>
+   <div class="header_r header_search"> <a class="ico_18_3" href="index.php?a=index{if $smarty.session.user_id gt 0}&u={$smarty.session.user_id}{else}&u=0{/if}"> 会员中心菜单</a> </div>
+ 
+    <!--下拉菜单start-->
+   <!--下拉菜单end-->
+
+  </div>
+
+
+</header>
+ <div class="line-top"></div>
+ 
+ <div class="user-redpaper-banner-01">
+   <a><img src="images/user-redpaper-img1.jpg" /></a>
+ </div>
+<!--start-->
+ <section class="user-profit">
+ 
+  <!-- <section class="user-profit">
+     <div class="category-list">
+       <a class="a1 on" id="pro_a1" href="index.php?m=default&c=user&a=my_shouyi&n=a1">收益金额</a>
+       <a class="a2" id="pro_a2" href="index.php?m=default&c=user&a=my_shouyi&n=a2">销售金额</a>  
+     </div>
+   </section>-->
+      
+     <section class="user-profit-top show" id="profita1">
+          <div class="demo">
+              <dl class="notes">
+               <dt class="html">
+                 <div class="notesite" id="note_0" data-a="{$attention_earnning_today}" data-b="{$attention_earnning}" dir="10"></div><!--取今日收益和总收益-->
+               </dt>
+              </dl>
+           </div>
+         
+         <div class="profit-data" >  
+            <p class="data-before"><span>{$attention_account_today}</span><em>今日关注人数</em></p>
+            <p class="data-after"><span>{$attention_account}</span><em>总关注人数</em></p>
+         </div>
+         
+         <div class="profit-data profit-data2" >  
+            <p class="data-before"><em>今日收益</em><span>{$attention_earnning_today}</span></p>
+            <p class="data-after"><em>总收益</em><span>{$attention_earnning}</span></p>
+         </div> 
+         
+       </section>
+       
+      <!--<section class="user-profit-top" id="profita2">
+           <div class="demo">
+              <dl class="notes">
+               <dt class="html">
+                 <div class="notesite" id="note_1" data-a="{$earnning_tuiguang}" data-b="{$earnning_qudao}" dir="10"></div>
+               </dt>
+              </dl>
+           </div>
+         
+         <div class="profit-data">  
+            <p class="data-before"><span>{$sell_tuiguang}</span><em>本月推广销售</em></p>
+            <p class="data-after"><span>{$sell_qudao}</span><em>本月渠道销售</em></p>
+         </div> 
+       </section>-->
+       
+        <div class="clear"></div>
+        
+       <section class="user-profit-link">
+         <h4>每天24点结算，当天收益</h4>
+         
+         <!--<ul>
+           <li>
+             <a class="title" href="index.php?m=default&c=user&a=earnings_detail">
+               <span class="sp1">09-04</span>
+               <span class="sp1">4人</span>
+               <span class="sp1">28.00元</span>
+               <i></i>
+             </a>
+           </li>
+           
+           <li>
+             <a class="title" href="index.php?m=default&c=user&a=earnings_overview">
+               <span class="sp1">09-04</span>
+               <span class="sp1">4人</span>
+               <span class="sp1">28.00元</span>
+               <i></i>
+             </a>
+           </li>
+           
+         </ul>-->
+         
+ <div class="user-accounts">
+    
+    <div class="category-list category-list2">
+     <a class="a1">日期</a>
+     <a class="a2">人数</a>
+     <a class="a2">收益金额</a>
+     <a class="last">&nbsp;</a>  
+   </div>
+   
+
+    <div class="user-accounts-box user-accounts-box2">
+      <ul>
+
+
+        <!--{if $count_nine_four neq 0}-->
+         <li>
+           <div>
+           <a href="index.php?m=default&c=user&a=user_redpaper_detail&date_mark=4">
+             <span class="a1">2015-09-04</span>
+             <span class="a1">{$count_nine_four}人</span>
+             <span class="a3">￥<em>{$earnning_nine_four}</em></span>
+             <span  class="last"><i></i></span>
+            </a>
+          </div>
+        </li>
+        <!--{/if}--> 
+ 
+   
+      </ul>
+    </div>
+
+</div>
+
+
+       </section>
+</section>
+<!--end-->
+</div>
+<!-- #BeginLibraryItem "/library/search.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/user_footer.lbi" --><!-- #EndLibraryItem -->
+<script type="text/javascript">
+
+
+//圆形定义
+function drawTimer(id, percent) {
+    $('#note_' + id).html('<div class="percent"></div><div id="slice"' + (percent > 50 ? ' class="gt50"': '') + '><div class="pie"></div>' + (percent > 50 ? '<div class="pie fill"></div>': '') + '</div>');
+    var deg = 360 * percent/100;
+    $('#note_' + id + ' #slice .pie').css({
+        '-moz-transform': 'rotate(' + deg + 'deg)',
+        '-webkit-transform': 'rotate(' + deg + 'deg)',
+        '-o-transform': 'rotate(' + deg + 'deg)',
+        'transform': 'rotate(' + deg + 'deg)'
+    });
+    
+    var data1 = $('#note_' + id).attr('data-a');
+	var data2 = $('#note_' + id).attr('data-b');
+    data1= parseFloat(data1);
+    data2= parseFloat(data2);
+	
+	var sum =data2;
+	sum = Math.round(sum*100)/100;
+    $('#note_' + id + ' .percent').html('<span class="all">' + sum + '<em>总收益（元）</em></span>');
+
+}
+
+//计算值
+function stopNote(id,note) {
+	
+	var seconds = (timerFinish - (new Date().getTime())) / 100;
+    var percent = 100 - ((seconds / timerSeconds)*100); 
+    if (percent <= note) {
+        drawTimer(id, percent);
+    }  
+}
+//旋转速度
+$(document).ready(function() {
+    timerSeconds = 50;
+    timerFinish = new Date().getTime() + (timerSeconds * 100);
+    $('.notesite').each(function(id) {
+        data1 = $('#note_' + id).attr('data-a');
+		data2 = $('#note_' + id).attr('data-b');
+		
+		data1= parseFloat(data1);
+	    data2= parseFloat(data2);
+	    var sum =data2;
+	//alert(percent1);
+	percent1=data1/sum;
+	percent2=data2/sum;
+	percent1 =  Math.round(percent1*100)/100*100;
+	percent2 = Math.round(percent2*100)/100*100;
+	percent=percent2;
+	$('#note_' + id +'.notesite').removeClass("notesite2");
+	 if(data2==0 && data1==0){
+		   $('#note_' + id).html('<div class="percent"></div><div id="slice"' + (percent > 50 ? ' class="gt50"': '') + '><div class="pie"></div>' + (percent > 50 ? '<div class="pie fill"></div>': '') + '</div>');		   
+		   $('#note_' + id + ' .percent').html('<span class="all">' + sum + '<em>总收益（元）</em></span>');
+		   $('#note_' + id +'.notesite').addClass("notesite2");
+	   }else if(data2==0){
+		   $('#note_' + id).html('<div class="percent"></div><div id="slice"' + (percent > 50 ? ' class="gt50"': '') + '><div class="pie"></div>' + (percent > 50 ? '<div class="pie fill"></div>': '') + '</div>');		   
+		   $('#note_' + id + ' .percent').html('<span class="all">' + sum + '<em>总收益（元）</em></span>');
+	   }
+	   else{
+		   
+    var note=percent2;
+        timer = setInterval('stopNote(' + id + ', '+ note +')', 0);
+	   }
+    });
+});
+  
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+.login-bg {
+  background:url(../images/login-bg.jpg) no-repeat center top;
+  width: 100%;
+  background-size: cover;
+}
+.clear{ clear:both; overflow:hidden;}
+.container-fluid .panel-default{ background:none !important; border:none;}
+.container-fluid .panel-default .panel-heading{background:none !important; border-bottom:none; overflow:hidden;
+padding:0 !important; margin-bottom:20px; text-align:center;}
+.container-fluid .panel-default .panel-heading a{ font-size:1.2em; color:#F3D7D4 !important;}
+.container-fluid .panel-default .panel-tab a{ text-align:center;color:#F3D7D4 !important;}
+.container-fluid .panel-default .panel-tab a{ padding:5px; border:1px solid #b7acc4; width:48%; display:block; float:left;margin:1%;}
+.container-fluid .panel-default .panel-body{background:none !important; margin-top:10px !important;}
+
+.container-fluid .form-group{margin-left:5px;}
+.container-fluid .form-group b{font-weight: normal; float:left;}
+.container-fluid .form-group .user_ico{}
+.container-fluid .form-group b i.user_ico {background-position: 0px 0px;}
+.container-fluid .form-group b i.password_ico {background-position: 0px -22px;}
+.container-fluid .panel-body{ margin-top:20px !important;}
+.container-fluid .form-group{padding:0px; margin-bottom:0;}
+.container-fluid .form-group b i {display: block;width: 22px;height: 22px;
+background: url(../images/login-ico.png) no-repeat;background-size: 100px;}
+.container-fluid .form-group span {left: 2em;right: inherit;font-size: 1em;
+width: 80%;height: 22px;line-height: 24px;}
+.container-fluid .inputBg {background: none !important;color: #EBE9EF !important; border:none;}
+.login-line1 {height: 3px;width: 100%;border-bottom: 1px solid #b7acc4;border-left: 1px solid #b7acc4;border-right: 1px solid #b7acc4;
+margin-bottom: 20px;}
+
+.form-group .col-sm-offset-2{padding:20px 0 !important; margin:0 !important;}
+.form-group .btn{ width:48%; border:none; padding:8px 0;}
+.form-group .btn-primary{ background-color:#c40000;}
+.form-group .btn-default{}
+.form-group-bottom{margin-top:40px;color:#EBE9EF;}
+
+.container-fluid .panel-default .panel-tab a.on{border:1px solid #c40000 !important; color:#c40000;}
+.container-fluid .panel-default .panel-tab a:hover{ text-decoration:none;}
+.panel-box .panel-body{ display:none;}
+.panel-box .active{ display:block;}

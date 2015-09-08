@@ -1,0 +1,3 @@
+<div class="ect-header-div search-bar">
+  <button class="btn btn-default ect-text-left ect-btn-search" onClick="javascript:openSearch();"><i class="fa fa-search"></i>&nbsp;{$lang.no_keywords}</button>
+</div>

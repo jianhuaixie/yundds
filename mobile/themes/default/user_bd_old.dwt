@@ -1,0 +1,90 @@
+<!-- #BeginLibraryItem "/library/user_header.lbi" --><!-- #EndLibraryItem -->
+<script type="text/javascript">
+{foreach from=$lang.profile_js item=item key=key}
+  var {$key} = "{$item}";
+{/foreach}
+</script>
+
+<section class="login-box">
+  <form name="formPassword" action="{:url('user/bd_old')}" method="post" >
+  <div class="flow-consignee ect-bg-colorf">
+   		<ul>
+       	  <li>
+       	    <div class="input-text"><b>账&nbsp;&nbsp;&nbsp;&nbsp;号：</b><span>
+   	        <input placeholder="请输入手机号" name="username" type="text"></span></div>
+          </li>
+          <li>
+            <div class="input-text"><b>密&nbsp;&nbsp;&nbsp;&nbsp;码：</b><span>
+              <input placeholder="请输入密码" name="password" id="password" type="password" datatype="*6-20"></span>
+            </div>
+            
+            <div class="login-show-button">
+              <span><img src="images/login-colse.png" /></span>
+              <dl>
+                 <dt></dt>
+                 <dd class="d1">abc</dd>
+                 <dd class="d2">
+                   <em></em>
+                   <em></em>
+                   <em></em>
+                 </dd>
+              </dl>
+            </div>
+         
+          </li>
+        </ul>
+   
+   </div>
+   <input name="act" type="hidden" value="bd_old" />
+   <div class="two-btn ect-padding-tb ect-padding-lr login-bt ect-margin-tb text-center">
+        <input name="submit" type="submit" class="btn btn-info ect-bg"  value="确认绑定" />
+   </div>
+   </form>
+
+
+<p class="ect-checkbox ect-padding-lr ect-margin-tb text-right ect-margin-bottom0 " style="clear:both;">
+	<a class="zc" href="{:url('user/bd_new')}">绑定新注册账号</a>
+</p>
+  
+</section>
+
+   
+<p class="login-way">
+    <a class="qq-login" href="{:url('user/third_login',array('type'=>'qq'))}">
+      <span><img src="images/login-qq.png">绑定QQ账号</span>
+     </a>
+    <a class="weib-login" href="{:url('user/third_login',array('type'=>'sina'))}">
+      <span><img src="images/login-weibo.png">绑定微博账号</span>
+    </a>
+ </p>
+ 
+ 
+</div>
+
+<!-- #BeginLibraryItem "/library/search.lbi" --><!-- #EndLibraryItem -->
+<script type="text/javascript" src="__PUBLIC__/js/jquery.min.js" ></script> 
+
+<script type="text/javascript">
+   
+   $(".login-show-button dl").click(function(){
+	     var a=$(".login-show-button dl").attr("class");
+		 if(a=="show"){
+			   $(this).removeClass("show");
+			   $("#password").attr("type","password");
+			 }
+	      else{
+			    $(this).addClass("show");
+				$("#password").attr("type","text");
+			  }
+	   })
+	   
+	 $(".login-show-button span").click(function(){
+		  document.getElementById("password").value=null;
+		 })
+	
+</script>
+
+</body>
+
+
+</html>

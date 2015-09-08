@@ -1,0 +1,33 @@
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+<div class="con">
+  <header id="header" class="header">
+   <div class="user-header">
+    <h1>最新活动</h1>
+    <div class="header_l header_return"> <a class="ico_10_3" href="javascript:history.go(-1);"> 返回 </a> </div>
+    <div class="header_r header_search"> <a class="ico_18_3" href="./{if $smarty.session.user_id gt 0}?u={$smarty.session.user_id}{/if}"> 会员中心菜单</a> </div>
+   
+  </div>
+
+  </header>
+
+ <div class="line-top"></div>
+ <style>
+ .topic1 img{float:left;width:100%;}
+ </style>
+ <div class="topic1" style="text-align:center;margin:0 auto;">
+  <!--{if $guanzhu eq 0}-->
+  <a href="http://mp.weixin.qq.com/s?__biz=MzIyOTAwNDQwNw==&mid=207543134&idx=1&sn=1ade1cb1a2d6d8e6e87340570378574e#rd{if $smarty.session.user_id gt 0}&u={$smarty.session.user_id}{/if}"><img src="../images/topic/9-4-12-30_01.jpg"/></a>
+  <!--{else}-->
+  <a href="index.php?m=default&c=user&a=bd_new" onclick="if (!confirm('请绑定手机号码')) return false;"><img src="../images/topic/9-4-12-30_01.jpg"/></a>
+  <!--{/if}-->
+  <img src="../images/topic/9-4-12-30_02.jpg"/>
+  <a href="http://mp.weixin.qq.com/s?__biz=MzIyOTAwNDQwNw==&mid=207543134&idx=1&sn=1ade1cb1a2d6d8e6e87340570378574e#rd{if $smarty.session.user_id gt 0}&u={$smarty.session.user_id}{/if}"><img src="../images/topic/9-4-12-30_03.jpg"/></a>
+  <a href="index.php?m=default&c=user&a=user_redpager"><img src="../images/topic/9-4-12-30_04.jpg"/></a>
+  <a href="index.php?c=topic&a=index&id=20{if $smarty.session.user_id gt 0}&u={$smarty.session.user_id}{/if}"><img src="../images/topic/9-4-12-30_05.jpg"/></a>
+  </div>
+
+</div>
+<!-- #BeginLibraryItem "/library/search.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/page_footer_refresh.lbi" --><!-- #EndLibraryItem -->
+
+</body></html>

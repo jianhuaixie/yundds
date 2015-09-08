@@ -1,0 +1,96 @@
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+
+<div class="con">
+
+<header id="header" class="header">
+  <div class="user-header">
+    <h1 >{$title}</h1>
+    <div class="header_l header_return"> <a class="ico_10_3" href="javascript:history.go(-1);"> 返回 </a> </div>
+    <div class="header_r header_search"> <a class="ico_helf" href="javascript:void(0);"> 会员中心菜单</a> </div>
+  </div>
+
+</header>
+
+<dl class="member-list-menu2">
+  <dt class="first">
+    <p style="margin-bottom:10px; font-size:1.1em;">相关说明:</p>
+    <p style="color:#666;"> 1、已关注数只显示该页已关注官方微信的粉丝数</p>
+    <p style="color:#666;"> 2、未关注数只显示该页未关注官方微信的粉丝数</p>
+    <p style="color:#666;"> 3、列表用户只显示自己每层的粉丝数，最多可浏览三层</p>
+   
+  </dt>
+
+</dl>
+
+<div class="menu-bg3"></div>
+<div class="line-top"></div>
+
+
+<!--start-->
+ <section class="user-popularity">
+    <div class="category-list">
+     <a class="a1 on" href="#">已关注:{$attention_count}</a>
+     <a class="a2" href="#">未关注:{$notattention_count}</a>  
+   </div>
+   <div class="user-popularity-box">
+     <ul>
+       <!--{foreach from=$attention_allay_list item=attention_allay_list}-->
+       <a  style="display:block;" href="index.php?m=default&c=user&a=my_renqi_3&uid={$attention_allay_list.1}&attention={$attention_count}&notattention={$notattention_count}">
+       <li>
+         <dl><span class="avatar"><img src="{$attention_allay_list.5}"/></span></dl>
+         <h4><span class="color1">粉丝名称：</span><span class="color2">{$attention_allay_list.0}</span></h4>
+         <div>
+           <span class="name">{$attention_allay_list.1}</span>
+           <span class="num">{$attention_allay_list.2}</span>
+           <span class="stute">{$attention_allay_list.3}</span>
+           <span class="level">2</span>
+         </div>
+         <p>{$attention_allay_list.4}</p>
+         <em><img src="images/user-popularity-arrow.png" /></em>
+       </li>
+       </a>
+       <!--{/foreach}-->
+     </ul>
+     
+     <ul>
+	 <!--{foreach from=$notattention_allay_list item=ab}-->
+       <li>
+       <a  style="display:block;" href="index.php?m=default&c=user&a=my_renqi_3&uid={$ab.1}&attention={$attention_count}&notattention={$notattention_count}">
+         <dl><span class="avatar"><img src="images/user_photo.jpg"/></span></dl>
+         <h4><span class="color1">粉丝名称：</span><span class="color2">{$ab.0}</span></h4>
+         <div>
+           <span class="name">{$ab.1}</span>
+           <span class="num">{$ab.2}</span>
+           <span class="stute">{$ab.3}</span>
+           <span class="level">2</span>
+         </div>
+         <p>{$ab.4}</p>
+         <em><img src="images/user-popularity-arrow.png" /></em>
+       </li>
+       </a>
+     <!--{/foreach}-->
+      
+       
+     </ul>
+     
+   </div>
+</section>
+</div>
+
+<!-- #BeginLibraryItem "/library/search.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/user_footer2.lbi" --><!-- #EndLibraryItem -->
+<script type="text/javascript">
+    $(".category-list a").removeClass("on");
+	$(".category-list a:first").addClass("on");
+	$(".user-popularity-box ul").css("display","none");
+	$(".user-popularity-box ul:first").css("display","block");
+	$(".user-popularity .category-list a").click(function(){
+		    var a=$(this).index();
+		    $(".category-list a").removeClass("on");
+			$(this).addClass("on");	
+			$(".user-popularity-box ul").css("display","none");
+			$(".user-popularity-box ul").eq(a).css("display","block");
+		})
+</script>
+</body>
+</html>

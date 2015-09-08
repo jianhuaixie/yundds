@@ -1,0 +1,86 @@
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+
+<div class="con con2">
+
+<header id="header" class="header">
+
+  <div class="user-header">
+    <h1 >{$title}</h1>
+    <div class="header_l header_return"> <a class="ico_10_3" href="{:url('user/my_tuiguang')}"> 返回 </a> </div>
+   <div class="header_r header_search"> <a class="ico_18_3" href="./{if $smarty.session.user_id gt 0}?u={$smarty.session.user_id}{/if}"> 会员中心菜单</a> </div>
+ 
+    <!--下拉菜单start-->
+   <!--下拉菜单end-->
+
+  </div>
+
+
+</header>
+
+<!--<dl class="member-list-menu2">
+  <dt class="first">
+    <a href="./{if $smarty.session.user_id gt 0}?u={$smarty.session.user_id}{/if}">
+       <span class="title">返回首页</span>
+    </a>
+  </dt>
+
+  <dt>
+    <a href="{:url('user/index')}">
+       <span class="title">个人中心</span>
+    </a>
+  </dt>
+</dl>
+<div class="menu-bg3"></div>-->
+ <div class="line-top"></div>
+ 
+<!--start-->
+ <section class="user-promote-order">
+    
+    <div class="category-list">
+     <a class="a1{if $tab eq 0} on{/if}" href="index.php?m=default&c=user&a=tuiguang_order">全部</a>
+     <a class="a2{if $tab eq 1} on{/if}" href="index.php?m=default&c=user&a=tuiguang_order1">待收货</a>
+     <a class="a2{if $tab eq 2} on{/if}" href="index.php?m=default&c=user&a=tuiguang_order2">已收货</a>
+     <a class="a2{if $tab eq 3} on{/if}" href="index.php?m=default&c=user&a=tuiguang_order3">换货中</a>
+     <a class="a2{if $tab eq 4} on{/if}" href="index.php?m=default&c=user&a=tuiguang_order4">已退货</a> 
+   </div>
+   
+    <div class="user-promote-order-box">
+      <ul>
+       
+        	 <!--{foreach from=$order_list_info item=order_list_infofo }-->
+        <li>   
+          <h4>
+            <span class="sp1">订单编号：{$order_list_infofo.1}</span>
+            <span class="statue">{$order_list_infofo.8}</span>
+          </h4>
+          
+          <dl>
+             <dt>
+               <a class="image"><img src="/{$order_list_infofo.7}" /></a>
+               <p class="title"><a>{$order_list_infofo.6}</a></p>
+               <p class="time">购买时间：{$order_list_infofo.5}</p>
+               <p class="price-num">
+                 <span class="price">￥<em>{$order_list_infofo.2}</em></span>
+                 <span class="num"></span>
+               </p>
+             </dt>
+          </dl>
+                 
+          <h4>
+             <span class="id">买家ID{$order_list_infofo.3}</span>
+             <span class="total"><em></em>
+               &nbsp;收益￥{$order_list_infofo.4}
+             </span> 
+          </h4>   
+        </li>
+        <!--{/foreach}-->
+        
+      </ul>
+    </div>
+    
+</section>
+<!--end-->
+<!-- #BeginLibraryItem "/library/search.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/user_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+</html>

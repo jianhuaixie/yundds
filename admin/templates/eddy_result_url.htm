@@ -1,0 +1,21 @@
+﻿
+
+
+
+ <table cellpadding="3" cellspacing="1">
+
+
+  
+
+  
+   {foreach from=$result_url item=new_url}
+        <tr>
+			<td>电脑端连接</td>
+            <td> <a href="../user.php?act=act_add_bonus&bonus_sn={$result_url}">{$result_url}</a></td>
+             
+			<td>手机端连接</td>
+           <td><a href="../mobile/user.php?act=act_add_bonus&bonus_sn={$result_url}">{$result_url}</a></td>
+		   <td>{$result_money}</td>
+    </tr>
+  {/foreach}
+</table>

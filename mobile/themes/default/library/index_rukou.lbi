@@ -1,0 +1,11 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<section class="h-brand">
+  <div class=" h-floor">
+    <div class="h-floor-title"><span>精选推荐</span><a href="{:url('category/top_all')}{if $smarty.session.user_id gt 0}&u={$smarty.session.user_id}{/if}">查看更多>></a></div>
+  </div>
+   <div class="brand-box">
+      {insert name='ads' id=5 num=10}
+   </div>
+</section>
+<div class="clear"></div>
+<div class="blank2"></div>

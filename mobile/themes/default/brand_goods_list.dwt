@@ -1,0 +1,19 @@
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+<div class="con">
+<div style="height:6.7em;"></div>
+  <header id="header">
+  <div class="header_l header_return"> <a class="ico_10" href="javascript:history.go(-1);"> 返回 </a> </div>
+    <h1>商品搜索</h1>
+  <div class="header_r header_search"> <a class="ico_03" href="javascript:openSearch();"> 搜索 </a> </div>
+</header>
+<!-- #BeginLibraryItem "/library/goods_list_brand.lbi" --><!-- #EndLibraryItem -->
+</div>
+<!-- #BeginLibraryItem "/library/search.lbi" --><!-- #EndLibraryItem --> 
+<!-- #BeginLibraryItem "/library/page_footer_refresh.lbi" --><!-- #EndLibraryItem --> 
+<script type="text/javascript">
+<!--{if $show_asynclist}-->
+get_asynclist("{:url('brand/list_asynclist', array('id'=>$this->_var['id'],'brand'=>$this->_var['brand_id'],'price_min'=>$this->_var['price_min'],'price_max'=>$this->_var['price_max'],'filter_attr'=>$this->_var['filter_attr'],'page'=>$this->_var['page'],'sort'=>$this->_var['sort'],'order'=>$this->_var['order'],'keywords'=>$this->_var['keywords']))}" , '__TPL__/images/loader.gif');
+<!--{/if}--> 
+</script>
+</body>
+</html>

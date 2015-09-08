@@ -1,0 +1,197 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<!-- {if $hot_goods} -->
+
+<section class="h-buyhot">
+
+  <div class="h-buyhot-title">
+
+      <h4>新品HOT</h4>
+
+      <a href="index.php?m=default&c=category&type=new">更多</a>
+
+   </div>
+
+   <div class="h-buyhot-box">
+
+   
+
+     <div id="h-hot-focus" class="focus region  ban-focus">
+
+       <div class="hd">
+
+          <ul>
+
+         </ul>
+
+       </div>
+
+       <div class="bd">
+
+         <div class="bd-box">
+
+          <ul>
+
+            <!--{foreach from=$hot_goods item=goods name=hot_goods}-->
+
+            {if $smarty.foreach.hot_goods.iteration eq 1 or $smarty.foreach.hot_goods.iteration eq 2}
+
+            <li>
+
+              <a href="{$goods.url}"><img src="{$goods.thumb}" /></a></a>
+
+              <dl>
+
+                <dt><h4><a href="{$goods.url}">{$goods.name|escape:html}</a></h4></dt>
+
+                <dd>
+
+                  <span class="price"><!-- {if $goods.promote_price neq ""} -->{$goods.promote_price}<!-- {else}-->{$goods.shop_price}<!--{/if}--><del>{$goods.shop_price}</del></span>
+
+                  <!--<span class="sum"><em>销量</em>: {$goods.sales_count}</span>-->
+
+                </dd>
+
+                <dd>
+
+                  <span class="enjoy"><i class="fa fa-heart-o"></i> {$goods.sc}人喜欢</span>
+
+                  <!--<span class="share"><a><i class="fa fa-share"></i>分享</a></span>-->
+
+                </dd>
+
+              </dl>
+
+           </li>
+
+           {/if}
+
+           <!--{/foreach}-->
+
+         </ul>
+
+          
+
+          <ul>
+
+            <!--{foreach from=$hot_goods item=goods name=hot_goods}-->
+
+            {if $smarty.foreach.hot_goods.iteration eq 3 or $smarty.foreach.hot_goods.iteration eq 4}
+
+            <li>
+
+              <a href="{$goods.url}"><img src="{$goods.thumb}" /></a></a>
+
+              <dl>
+
+                <dt><h4><a href="{$goods.url}">{$goods.name|escape:html}</a></h4></dt>
+
+                <dd>
+
+                  <span class="price"><!-- {if $goods.promote_price neq ""} -->{$goods.promote_price}<!-- {else}-->{$goods.shop_price}<!--{/if}--><del>{$goods.shop_price}</del></span>
+
+                  <!--<span class="sum"><em>销量</em>: {$goods.sales_count}</span>-->
+
+                </dd>
+
+                <dd>
+
+                  <span class="enjoy"><i class="fa fa-heart-o"></i> {$goods.sc}人喜欢</span>
+
+                  <!--<span class="share"><a><i class="fa fa-share"></i>分享</a></span>-->
+
+                </dd>
+
+              </dl>
+
+           </li>
+
+           {/if}
+
+           <!--{/foreach}-->
+
+         </ul>
+
+         
+
+          <ul>
+
+            <!--{foreach from=$hot_goods item=goods name=hot_goods}-->
+
+            {if $smarty.foreach.hot_goods.iteration eq 5 or $smarty.foreach.hot_goods.iteration eq 6}
+
+            <li>
+
+              <a href="{$goods.url}"><img src="{$goods.thumb}" /></a></a>
+
+              <dl>
+
+                <dt><h4><a href="{$goods.url}">{$goods.name|escape:html}</a></h4></dt>
+
+                <dd>
+
+                  <span class="price"><!-- {if $goods.promote_price neq ""} -->{$goods.promote_price}<!-- {else}-->{$goods.shop_price}<!--{/if}--><del>{$goods.shop_price}</del></span>
+
+                  <!--<span class="sum"><em>销量</em>: {$goods.sales_count}</span>-->
+
+                </dd>
+
+                <dd>
+
+                  <span class="enjoy"><i class="fa fa-heart-o"></i> {$goods.sc}人喜欢</span>
+
+                  <!--<span class="share"><a><i class="fa fa-share"></i>分享</a></span>-->
+
+                </dd>
+
+              </dl>
+
+           </li>
+
+           {/if}
+
+           <!--{/foreach}-->
+
+         </ul>
+
+         </div>
+
+       </div>
+
+     </div>
+
+ 
+
+   </div>
+
+   <div style="blank2"></div>
+
+</section>
+
+<script type="text/javascript">
+
+/*banner热卖HOT*/
+
+	   TouchSlide({
+
+	   slideCell : "#h-hot-focus",
+
+	   titCell : ".hd ul", // 开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+
+	    mainCell : ".bd-box",
+
+	   effect : "leftLoop",
+
+	   autoPlay : false, // 自动播放
+
+	   autoPage : true, // 自动分页
+
+	   delayTime: 200, // 毫秒；切换效果持续时间（执行一次效果用多少毫秒）
+
+	   interTime: 2500, // 毫秒；自动运行间隔（隔多少毫秒后执行下一个效果）
+
+	})
+
+</script>
+
+<!-- {/if} -->

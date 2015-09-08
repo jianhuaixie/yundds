@@ -1,0 +1,34 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<section>
+
+  <!--{foreach from=$new_goods item=goods name=new_goods}-->
+  {if $smarty.foreach.new_goods.iteration < 5}
+
+  <div class="h-floor-box">
+
+     <div class="h-floor-content">
+
+        <li><a href="{$goods.url}"><img src="{$goods.thumb}" alt="{$goods.name|escape:html}" /></a></li>
+
+        <div class="cont-right">
+
+           <h4><a href="{$goods.url}">{$goods.name|escape:html}</a></h4>
+
+           <span class="cut cut2">新品推荐</span>
+
+           <span class="price"><!-- {if $goods.promote_price neq ""} -->{$goods.promote_price}<!-- {else}-->{$goods.shop_price}<!--{/if}--><del>{$goods.shop_price}</del></span>
+
+           <a class="buy-cart" href="{$goods.url}"></a>
+
+        </div>
+
+     </div>
+
+     <!--<span class="sum">库存{$goods.goods_number}</span>-->
+
+  </div>
+  {/if}
+  <!--{/foreach}-->
+
+</section>

@@ -1,0 +1,75 @@
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+
+<div class="con">
+
+<header id="header" class="header">
+  <div class="user-header">
+    <h1 >收益明细</h1>
+    <div class="header_l header_return"> <a class="ico_10_3" href="javascript:history.go(-1);"> 返回 </a> </div>
+    <div class="header_r header_search"> <a class="ico_helf" href="javascript:void(0);"> 会员中心菜单</a> </div>
+  </div>
+
+</header>
+
+<!--
+<dl class="member-list-menu2">
+  <dt class="first">
+    <p style="margin-bottom:10px; font-size:1.1em;">相关说明:</p>
+    <p style="color:#666;"> 1、已关注数是所有已关注官方微信的粉丝数</p>
+    <p style="color:#666;"> 2、未关注数是所有未关注官方微信的粉丝数</p>
+    <p style="color:#666;"> 3、列表用户只显示自己每层的粉丝数，最多可浏览三层</p>
+   
+  </dt>
+
+</dl>
+-->
+
+<div class="menu-bg3"></div>
+<div class="line-top"></div>
+<!--start-->
+ <section class="user-accounts">
+    
+    <div class="category-list category-list3">
+     <a class="a1">日期</a>
+     <a class="a2">类型</a>
+     <a class="a2">收益金额</a>
+   </div>
+   
+
+    <div class="user-accounts-box user-accounts-box3">
+      <ul>
+      
+     {foreach from=$earnning_info_list  item=info }
+        <li>
+          <div>
+           <a>
+             <span class="a1">{$info.0}</span>
+             <span class="a1"><em>{$info.1}</em></span>
+             <span class="a1">￥<em>{$info.2}</em></span>
+            </a>
+          </div>
+        </li>
+     {/foreach}
+        
+        
+
+        
+      </ul>
+    </div>
+
+  
+    <div class="user-accounts-bottom">
+      <p>
+       <span class="sp1">推广收益<em>{$earnning_month_tuiguang}</em></span>
+       <span class="sp2">渠道收益 <em>{$earnning_month_qudao}</em></span>
+      </p>
+    </div>
+    
+  
+  
+</section>
+<!--end-->
+</div>
+
+</body>
+</html>

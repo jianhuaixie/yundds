@@ -1,0 +1,29 @@
+<!-- #BeginLibraryItem "/library/user_header.lbi" --><!-- #EndLibraryItem -->
+<!--start-->
+<section class="user-redpaper-detail">
+
+
+<!--{foreach from=$info_list  item=info}-->
+     <li>
+         <dl><a><img src="{$info.0}" /></a></dl>
+         <h4><a class="color1">{$info.1}</a></h4>
+         <div>
+           <span class="name">{$info.2}</span>
+           <span class="stute">{$info.3}</span>
+            <span class="time">{$info.4}</span>
+         </div>    
+     </li>
+ <!--{/foreach}-->    
+ 
+    
+    
+</section>
+
+
+
+<!--end-->
+</div>
+<!-- #BeginLibraryItem "/library/search.lbi" --><!-- #EndLibraryItem -->
+<!-- #BeginLibraryItem "/library/user_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+</html>
