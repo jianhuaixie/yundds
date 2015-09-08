@@ -403,6 +403,12 @@ class PaymentModel extends BaseModel {
              	$c1=$sqlhelper->execute_dql1("select rank_points from ydcom_users where user_id=$b1");
              	//c1为等级积分
              	$d1=$sqlhelper->execute_dql1("select cengshu from ydcom_user_yongjin where $c1>=min_points and $c1<=max_points");
+             	//分销等级
+             	$fx_rank=$sqlhelper->getuser_rank_simple($b1);
+             	if ($fx_rank>=3){
+             		$d1=-1;
+             	}
+             	
              	//d1为层数
              	if ($d1==-1){
              		//如果层数为-1，那么可享受模式一的最高层数，最高层数赋给d1

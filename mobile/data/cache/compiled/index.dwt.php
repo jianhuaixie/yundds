@@ -188,16 +188,17 @@ echo $this->_echash . $k['name'] . '|' . serialize($k) . $this->_echash;
   <div class="brabd-top">
      <h4>热门品牌<em>hot brand</em></h4>
      <p>
-       <a class="on">美妆品牌</a>
+       <a class="on">全部</a>
+       <a >美妆品牌</a>
        <a>服装品牌</a>
-       <a>查看更多>></a>
+       <a>更多>></a>
      </p>  
   </div>
   <div class="clear"></div>
   <div class="brand-content">
      <div class="cont-left">
         
-           <div id="brand" class="focus b-left ban-focus">
+           <div id="brand0" class="focus b-left ban-focus">
               <div class="hd">
                 <ul>
                 </ul>
@@ -213,7 +214,7 @@ echo $this->_echash . $k['name'] . '|' . serialize($k) . $this->_echash;
        <script type="text/javascript">
 
 	   TouchSlide({
-	   slideCell : "#brand",
+	   slideCell : "#brand0",
 	   titCell : ".hd ul", // 开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
 	   mainCell : ".bd ul",
 	   effect : "leftLoop",
@@ -222,7 +223,6 @@ echo $this->_echash . $k['name'] . '|' . serialize($k) . $this->_echash;
 	   delayTime: 200, // 毫秒；切换效果持续时间（执行一次效果用多少毫秒）
 	   interTime: 2500, // 毫秒；自动运行间隔（隔多少毫秒后执行下一个效果）
 	   //switchLoad : "_src" // 切换加载，真实图片路径为"_src"
-
 	})
        </script>
     
@@ -232,7 +232,7 @@ echo $this->_echash . $k['name'] . '|' . serialize($k) . $this->_echash;
          
          <div class="category">
            
-           <div id="brand2" class="focus b-right ban-focus">
+           <div id="brand1" class="focus b-right ban-focus">
               <div class="hd">
                 <ul>
                 </ul>
@@ -262,25 +262,11 @@ echo $this->_echash . $k['name'] . '|' . serialize($k) . $this->_echash;
                  </ul>
               </div>
            </div>
-           
-       <script type="text/javascript">
-	   TouchSlide({
-	   slideCell : "#brand2",
-	   titCell : ".hd ul", // 开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
-	   mainCell : ".bd ul",
-	   effect : "leftLoop",
-	   autoPlay : false, // 自动播放
-	   autoPage : true, // 自动分页
-	   delayTime: 200, // 毫秒；切换效果持续时间（执行一次效果用多少毫秒）
-	   interTime: 2500, // 毫秒；自动运行间隔（隔多少毫秒后执行下一个效果）
-	   //switchLoad : "_src" // 切换加载，真实图片路径为"_src"
-	   })
-       </script>
         
          </div>
          <div class="category">
            
-           <div id="brand3" class="focus b-right ban-focus">
+           <div id="brand2" class="focus b-right ban-focus">
               <div class="hd">
                 <ul>
                 </ul>
@@ -311,11 +297,71 @@ echo $this->_echash . $k['name'] . '|' . serialize($k) . $this->_echash;
                  </ul>
               </div>
            </div>
+        
+         </div>
+         
+         
+         
+         <div class="category">
            
+           <div id="brand3" class="focus b-right ban-focus">
+              <div class="hd">
+                <ul>
+                </ul>
+              </div>
+              <div class="bd">
+                 <ul>
+
+                   <li>
+                     <dl>
+                        <dt><a><img src="themes/default/images/h-brand-right-01.jpg" /></a></dt>
+                        <dt><a><img src="themes/default/images/h-brand-right-01.jpg" /></a></dt>
+                        <dt><a><img src="themes/default/images/h-brand-right-01.jpg" /></a></dt>
+                        
+                        <dt><a><img src="themes/default/images/h-brand-right-01.jpg" /></a></dt>
+                        <dt><a><img src="themes/default/images/h-brand-right-01.jpg" /></a></dt>
+                        <dt><a><img src="themes/default/images/h-brand-right-01.jpg" /></a></dt>
+                        
+                        <dt><a><img src="themes/default/images/h-brand-right-02.jpg" /></a></dt>
+                        <dt><a><img src="themes/default/images/h-brand-right-02.jpg" /></a></dt>
+                        <dt><a><img src="themes/default/images/h-brand-right-02.jpg" /></a></dt>
+                        
+                        <dt><a><img src="themes/default/images/h-brand-right-02.jpg" /></a></dt>
+                        <dt><a><img src="themes/default/images/h-brand-right-02.jpg" /></a></dt>
+                        <dt><a><img src="themes/default/images/h-brand-right-02.jpg" /></a></dt>
+                     </dl>
+                   </li>
+                  
+                 </ul>
+              </div>
+           </div>
+        
+         </div>
+         
+         
+         
+     </div>
+  </div>
+</section>
+
+<script type="text/javascript">
+	   TouchSlide({
+	   slideCell : "#brand1",
+	   titCell : ".hd ul", // 开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+	   mainCell : ".bd ul",
+	   effect : "leftLoop",
+	   autoPlay : false, // 自动播放
+	   autoPage : true, // 自动分页
+	   delayTime: 200, // 毫秒；切换效果持续时间（执行一次效果用多少毫秒）
+	   interTime: 2500, // 毫秒；自动运行间隔（隔多少毫秒后执行下一个效果）
+	   //switchLoad : "_src" // 切换加载，真实图片路径为"_src"
+	   })
+       </script>
+        
        <script type="text/javascript">
 
 	   TouchSlide({
-	   slideCell : "#brand3",
+	   slideCell : "#brand2",
 	   titCell : ".hd ul", // 开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
 	   mainCell : ".bd ul",
 	   effect : "leftLoop",
@@ -328,16 +374,21 @@ echo $this->_echash . $k['name'] . '|' . serialize($k) . $this->_echash;
 	})
        </script>
     
-        
-        
-         </div>
-         
-         
-         
-         
-     </div>
-  </div>
-</section>
+    <script type="text/javascript">
+	   TouchSlide({
+	   slideCell : "#brand3",
+	   titCell : ".hd ul", // 开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+	   mainCell : ".bd ul",
+	   effect : "leftLoop",
+	   autoPlay : false, // 自动播放
+	   autoPage : true, // 自动分页
+	   delayTime: 200, // 毫秒；切换效果持续时间（执行一次效果用多少毫秒）
+	   interTime: 2500, // 毫秒；自动运行间隔（隔多少毫秒后执行下一个效果）
+	   //switchLoad : "_src" // 切换加载，真实图片路径为"_src"
+	   })
+       </script>
+       
+
 
 
 

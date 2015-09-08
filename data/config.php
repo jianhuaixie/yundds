@@ -30,7 +30,7 @@ define('AUTH_KEY', 'this is a key');
 
 define('OLD_AUTH_KEY', '');
 
-define('API_TIME', '2015-09-07 09:37:03');
+define('API_TIME', '2015-09-08 11:10:56');
 //商家入驻
 define('SJ_ADMIN_PATH','admin_shangjia');
 ?>

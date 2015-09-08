@@ -661,17 +661,24 @@ class IndexController extends CommonController {
     
     
      //推荐关注奖励奖金
-     function atten_test(){
+  public   function atten_test(){
+     	
+     	echo "开始执行";
      	$day_mark=date("ymd");
+     	$give_par_time=time();
+     	
+     	//打款截止时间昨天
+     	$end_time=mktime(0, 0 , 0,date("m"),date("d"),date("Y"));
+     	
      	//echo $day_mark;//关注手机，关注微信
      	$res=mysql_query("select user_id from ydcom_users where length(mobile_phone)>0  and  (length(wx_nickname)>0 or length(wx_headimgurl)>0) ");
      	while ($row=mysql_fetch_array($res)){
      		$count=0;
      		$p_uid=$row[0];
-     		$res1=mysql_query("select user_id from ydcom_users where parent_id=$p_uid and  (length(wx_nickname)>0 or length(wx_headimgurl)>0)  and give_par_mark=0");
+     		$res1=mysql_query("select user_id from ydcom_users where parent_id=$p_uid and  attention_time>0 and attention_time<$end_time and give_par_mark=0");
             while($row1=mysql_fetch_array($res1)){
             	$uid=$row1[0];
-            	mysql_query("update ydcom_users set give_par_mark=$day_mark where user_id=$uid");
+            	mysql_query("update ydcom_users set give_par_mark=$day_mark,give_par_time=$give_par_time  where user_id=$uid");
             	$count++;
             }
             
@@ -695,8 +702,13 @@ class IndexController extends CommonController {
             echo "uid:"."$p_uid"."推荐关注收益:"."$money"."</br>";   
      	}
      	}
-
-     }
+     	
+     	echo "执行成功";
+     	
+	
+	
+	
+	     }
      
      
      
